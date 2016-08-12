@@ -4,24 +4,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="15dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:gravity="center">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civ_head_image"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:src="@mipmap/icon_dota" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="15dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:src="@mipmap/anchor_live" />
@@ -34,8 +34,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:singleLine="true"
+        android:maxLength="6"
         android:textColor="@color/text_color"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/tv_item_down"
@@ -44,5 +45,5 @@
         android:gravity="center"
         android:singleLine="true"
         android:textColor="#8271A7"
-        android:textSize="12sp" />
+        android:textSize="10sp" />
 </LinearLayout>
