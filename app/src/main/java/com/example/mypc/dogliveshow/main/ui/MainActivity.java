@@ -87,7 +87,6 @@ public class MainActivity extends BaseActivity {
         transaction.commit();
     }
 
-
     @OnClick({R.id.btn_home_page, R.id.btn_classify, R.id.btn_head_line, R.id.btn_my_dog})
     public void onClick(View view) {
         switch (view.getId()) {
