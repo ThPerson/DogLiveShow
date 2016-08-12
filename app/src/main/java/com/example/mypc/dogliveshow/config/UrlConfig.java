@@ -16,4 +16,16 @@ public class UrlConfig {
         public static final String TYPE = "type";
         public static final String PAGENO = "pageNo";
     }
+
+    public static class HomePageTitleKey{
+        public static final String TYPE = "type";
+        public static final String DATATYPE = "dataType";
+        public static final String PAGENO2 = "pageNo2";
+        public static final String PAGESIZE2 = "pageSize2";
+        public static final String PAGENO3 = "pageNo3";
+        public static final String PAGESIZE3 = "pageSize3";
+        public static final String SYSTEM = "system";
+        public static final String VERSION = "version";
+        public static final String APPID = "appid";
+    }
 }
