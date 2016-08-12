@@ -11,10 +11,6 @@ import android.widget.RadioGroup;
 
 import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.base.BaseActivity;
-import com.example.mypc.dogliveshow.main.ui.ClassifyFragment;
-import com.example.mypc.dogliveshow.main.ui.HeadlineFragment;
-import com.example.mypc.dogliveshow.main.ui.HomePageFragment;
-import com.example.mypc.dogliveshow.main.ui.MyDogFragment;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -48,6 +44,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initFragment();
+        selectFragment(SELECTED_HOME);
     }
 
     private void initFragment() {
@@ -61,7 +58,7 @@ public class MainActivity extends BaseActivity {
         transaction.add(R.id.fl_layout, classifyFragment);
         transaction.add(R.id.fl_layout, headlineFragment);
         transaction.add(R.id.fl_layout, myDogFragment);
-        transaction.commitAllowingStateLoss();
+        transaction.commit();
     }
 
     public void selectFragment(int position) {
@@ -82,7 +79,7 @@ public class MainActivity extends BaseActivity {
                 break;
 
         }
-        transaction.commitAllowingStateLoss();
+        transaction.commit();
     }
 
 
