@@ -1,13 +1,49 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.mypc.dogliveshow.main.ui.ClassifyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="60dp"
+        android:background="#FE7053"
+        android:orientation="horizontal"
+        android:padding="10dp">
+      <LinearLayout
+          android:layout_centerInParent="true"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+          <!--<ImageView-->
+              <!--android:layout_width="wrap_content"-->
+              <!--android:layout_height="wrap_content"-->
+              <!--android:src="@mipmap/title_icon"/>-->
+          <TextView
+              android:layout_marginLeft="5dp"
+              android:id="@+id/tv_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:text="栏目分类"
+              android:textColor="#fff"
+              android:textSize="18sp"/>
+      </LinearLayout>
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/search_icon"/>
+    </RelativeLayout>
 
-</FrameLayout>
+</LinearLayout>
+
+
+
+
+
+
