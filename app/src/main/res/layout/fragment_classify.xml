@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.mypc.dogliveshow.main.ui.ClassifyFragment">
+    tools:context=".main.ui.classifyfragment.ClassifyFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -39,6 +39,13 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/search_icon"/>
     </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/classify_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>
 
