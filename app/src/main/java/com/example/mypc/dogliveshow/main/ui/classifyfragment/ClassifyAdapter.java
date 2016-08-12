@@ -1,7 +1,11 @@
 package com.example.mypc.dogliveshow.main.ui.classifyfragment;
 
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.bean.classifybean.DataListBean;
 
 import java.util.List;
@@ -16,6 +20,10 @@ public class ClassifyAdapter extends BaseQuickAdapter<DataListBean> {
 
     @Override
     protected void convert(BaseViewHolder baseViewHolder, DataListBean dataListBean) {
-
+        baseViewHolder.setText(R.id.tv_classify_name,dataListBean.getName())
+                .setText(R.id.tv_classify_livenum,dataListBean.getLivenum()+"条直播");
+        Glide.with(baseViewHolder.convertView.getContext())
+                .load(dataListBean.getImgurl())
+                .into((ImageView) baseViewHolder.getView(R.id.iv_classify_rel));
     }
 }
