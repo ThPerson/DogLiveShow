@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DogLiveShow</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_page">首页</string>
+    <string name="classify_now">栏目分类</string>
+    <string name="head_line">主播头条</string>
+    <string name="my_dog">我的</string>
+</resources>

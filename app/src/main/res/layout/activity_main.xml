@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clickable="true"/>
+    <RadioGroup
+        android:padding="5dp"
+        android:id="@+id/game_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btn_home_page"
+            style="@style/btn_radio"
+            android:checked="true"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/btn_home_backround_selector"
+            android:text="@string/home_page" />
+
+        <RadioButton
+            android:id="@+id/btn_classify"
+            style="@style/btn_radio"
+            android:drawableTop="@drawable/btn_classf_backround_selector"
+            android:drawablePadding="5dp"
+            android:text="@string/classify_now" />
+
+        <RadioButton
+            android:id="@+id/btn_head_line"
+            style="@style/btn_radio"
+            android:drawableTop="@drawable/btn_headline_backround_selector"
+            android:drawablePadding="5dp"
+            android:text="@string/head_line" />
+
+        <RadioButton
+            android:id="@+id/btn_my_dog"
+            style="@style/btn_radio"
+            android:drawableTop="@drawable/btn_my_backround_selector"
+            android:drawablePadding="5dp"
+            android:text="@string/my_dog" />
+    </RadioGroup>
+</LinearLayout>
