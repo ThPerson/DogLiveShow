@@ -1,4 +1,4 @@
-package com.example.mypc.dogliveshow;
+package com.example.mypc.dogliveshow.main.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +9,8 @@ import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.mypc.dogliveshow.R;
+import com.example.mypc.dogliveshow.base.BaseActivity;
 import com.example.mypc.dogliveshow.main.ui.ClassifyFragment;
 import com.example.mypc.dogliveshow.main.ui.HeadlineFragment;
 import com.example.mypc.dogliveshow.main.ui.HomePageFragment;

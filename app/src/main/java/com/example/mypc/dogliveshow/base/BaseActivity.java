@@ -1,4 +1,4 @@
-package com.example.mypc.dogliveshow;
+package com.example.mypc.dogliveshow.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
