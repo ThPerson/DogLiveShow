@@ -41,6 +41,11 @@ public class MainActivity extends BaseActivity {
     public static final int SELECTED_MYDOG = 3;
 
     @Override
+    public int getLayoutID() {
+        return R.layout.activity_main;
+    }
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initFragment();
@@ -80,12 +85,6 @@ public class MainActivity extends BaseActivity {
 
         }
         transaction.commit();
-    }
-
-
-    @Override
-    public int getLayoutID() {
-        return R.layout.activity_main;
     }
 
 
