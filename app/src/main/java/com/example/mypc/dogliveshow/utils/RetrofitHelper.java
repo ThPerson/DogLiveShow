@@ -1,4 +1,4 @@
-package com.example.mypc.dogliveshow.utils.classifyutils;
+package com.example.mypc.dogliveshow.utils;
 
 import com.example.mypc.dogliveshow.config.UrlConfig;
 import com.google.gson.Gson;

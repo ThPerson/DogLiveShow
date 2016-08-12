@@ -1,5 +1,17 @@
 package com.example.mypc.dogliveshow.utils.classifyutils;
 
+import android.util.Log;
+
+import com.example.mypc.dogliveshow.bean.classifybean.ClassifyBean;
+import com.example.mypc.dogliveshow.bean.classifybean.DataListBean;
+import com.example.mypc.dogliveshow.utils.RetrofitHelper;
+
+import java.util.HashMap;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 /**
  * Created by Administrator on 2016/8/12.
  */
@@ -17,5 +29,25 @@ public class HttpUtils {
         public void onSucess(T t);
         public void onFail();
     }
-    //public void getClassifyD
+    public void getClassifyData(HashMap<String,String> params, final HttpCallback<ClassifyBean> beanHttpCallback){
+        Call<ClassifyBean> classifyBeanCall = RetrofitHelper
+                .getInstance()
+                .creatRetrfitService(IClassifyService.class)
+                .getClassifyBean(params);
+        classifyBeanCall.enqueue(new Callback<ClassifyBean>() {
+            @Override
+            public void onResponse(Call<ClassifyBean> call, Response<ClassifyBean> response) {
+                ClassifyBean body = response.body();
+                for (DataListBean datalistbean : body.getDataList()) {
+                    Log.i("TAG",datalistbean.getName());
+                }
+                beanHttpCallback.onSucess(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<ClassifyBean> call, Throwable t) {
+                beanHttpCallback.onFail();
+            }
+        });
+    }
 }

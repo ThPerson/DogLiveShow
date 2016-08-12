@@ -14,5 +14,5 @@ import retrofit2.http.QueryMap;
  */
 public interface IClassifyService {
     @GET(UrlConfig.Path.CLASSIFY_URL)
-    Call<ClassifyBean> getClassifyData(@QueryMap() HashMap<String,String> params);
+    Call<ClassifyBean> getClassifyBean(@QueryMap() HashMap<String,String> params);
 }

@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="10dp">
     <ImageView
         android:id="@+id/iv_classify_rel"
-        android:layout_width="204dp"
-        android:layout_height="270dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_gravity="center_horizontal"
-        android:background="#f00"/>
+        android:background="@mipmap/no_copy_back"/>
     <TextView
         android:layout_marginTop="15dp"
         android:id="@+id/tv_classify_name"
@@ -17,16 +17,16 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:singleLine="true"
-        android:textSize="27sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:text="英雄联盟"/>
     <TextView
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="8dp"
         android:id="@+id/tv_classify_livenum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textSize="22sp"
+        android:textSize="10sp"
         android:text="4667条直播"/>
 
 </LinearLayout>
