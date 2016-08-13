@@ -28,7 +28,7 @@ public class HomePageTitleAdapter extends BaseQuickAdapter<HomePage.ConLiveBean.
         Glide.with(baseViewHolder.convertView.getContext())
                 .load(rawcommentatorimage)
                 .error(R.mipmap.no_result_icon)
-                .placeholder(R.mipmap.icon_lol)
+                .placeholder(R.mipmap.ic_default)
                 .into((ImageView) baseViewHolder.getView(R.id.civ_head_image));
 
     }
