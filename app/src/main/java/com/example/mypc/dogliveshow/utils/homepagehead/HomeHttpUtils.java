@@ -1,6 +1,4 @@
-package com.example.mypc.dogliveshow.utils.homepagehade;
-
-import android.util.Log;
+package com.example.mypc.dogliveshow.utils.homepagehead;
 
 import com.example.mypc.dogliveshow.bean.homepagetitle.HomePage;
 import com.example.mypc.dogliveshow.utils.IHomePageService;
@@ -36,7 +34,6 @@ public class HomeHttpUtils {
         homePageTitleBeanCall.enqueue(new Callback<HomePage>() {
             @Override
             public void onResponse(Call<HomePage> call, Response<HomePage> response) {
-                HomePage body = response.body();
                 beanHttpCallback.onSucess(response.body());
             }
 

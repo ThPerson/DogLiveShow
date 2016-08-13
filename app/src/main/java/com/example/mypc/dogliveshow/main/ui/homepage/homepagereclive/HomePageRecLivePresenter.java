@@ -1,19 +1,19 @@
-package com.example.mypc.dogliveshow.main.ui.homepage.homepagehead;
+package com.example.mypc.dogliveshow.main.ui.homepage.homepagereclive;
 
 import com.example.mypc.dogliveshow.bean.homepagetitle.HomePage;
-import com.example.mypc.dogliveshow.utils.homepagehead.HomeHttpUtils;
+import com.example.mypc.dogliveshow.utils.homepagereclive.HomeRecLiveHttpUtils;
 
 import java.util.HashMap;
 
 /**
  * Created by MyPC on 2016/8/12.
  */
-public class HomePageHeadPresenter implements HomePageHeadContract.Persenter{
+public class HomePageRecLivePresenter implements HomePageRecLiveContract.Persenter{
 
-    private HomePageHeadContract.View view;
-    private HomePageHeadContract.Model model;
+    private HomePageRecLiveContract.View view;
+    private HomePageRecLiveContract.Model model;
 
-    public HomePageHeadPresenter(HomePageHeadContract.View view,HomePageHeadContract.Model model){
+    public HomePageRecLivePresenter(HomePageRecLiveContract.View view, HomePageRecLiveContract.Model model){
         this.view = view;
         this.model = model;
     }
@@ -22,7 +22,7 @@ public class HomePageHeadPresenter implements HomePageHeadContract.Persenter{
 
     @Override
     public void getData(HashMap<String,String> params) {
-        model.getData(params, new HomeHttpUtils.HttpCallback<HomePage>() {
+        model.getData(params, new HomeRecLiveHttpUtils.HttpCallback<HomePage>() {
 
             @Override
             public void onSucess(HomePage homePage) {

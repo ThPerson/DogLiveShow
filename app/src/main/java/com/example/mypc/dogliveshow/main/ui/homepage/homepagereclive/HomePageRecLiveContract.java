@@ -1,17 +1,17 @@
-package com.example.mypc.dogliveshow.main.ui.homepage.homepagehead;
+package com.example.mypc.dogliveshow.main.ui.homepage.homepagereclive;
 
 import com.example.mypc.dogliveshow.base.IBaseModel;
 import com.example.mypc.dogliveshow.base.IBasePresenter;
 import com.example.mypc.dogliveshow.base.IBaseView;
 import com.example.mypc.dogliveshow.bean.homepagetitle.HomePage;
-import com.example.mypc.dogliveshow.utils.homepagehead.HomeHttpUtils;
+import com.example.mypc.dogliveshow.utils.homepagereclive.HomeRecLiveHttpUtils;
 
 import java.util.HashMap;
 
 /**
  * Created by MyPC on 2016/8/12.
  */
-public class HomePageHeadContract {
+public class HomePageRecLiveContract {
     public interface View extends IBaseView {
         void onSuccess(HomePage list);
 
@@ -19,10 +19,10 @@ public class HomePageHeadContract {
     }
 
     public interface Model extends IBaseModel {
-        void getData(HashMap<String, String> params, HomeHttpUtils.HttpCallback<HomePage> callback);
+        void getData(HashMap<String, String> params, HomeRecLiveHttpUtils.HttpCallback<HomePage> callback);
     }
 
     public interface Persenter extends IBasePresenter {
-        void getData(HashMap<String,String> params);
+        void getData(HashMap<String, String> params);
     }
 }

@@ -1,7 +1,7 @@
 package com.example.mypc.dogliveshow.main.ui.homepage.homepagehead;
 
 import com.example.mypc.dogliveshow.bean.homepagetitle.HomePage;
-import com.example.mypc.dogliveshow.utils.homepagehade.HomeHttpUtils;
+import com.example.mypc.dogliveshow.utils.homepagehead.HomeHttpUtils;
 
 import java.util.HashMap;
 

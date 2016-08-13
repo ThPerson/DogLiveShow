@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#f5f5f5"
     tools:context=".main.ui.classifyfragment.ClassifyFragment">
 
     <RelativeLayout
@@ -44,9 +45,10 @@
             android:src="@mipmap/search_icon" />
     </RelativeLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <com.example.mypc.dogliveshow.MyScrollview
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,6 +124,7 @@
                     android:textStyle="bold" />
             </RelativeLayout>
             <android.support.v7.widget.RecyclerView
+                android:background="#f5f5f5"
                 android:id="@+id/recycler_home_page_foryou"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
@@ -150,7 +153,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/recycler_hot_fire"></android.support.v7.widget.RecyclerView>
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </com.example.mypc.dogliveshow.MyScrollview>
 </LinearLayout>
 
 

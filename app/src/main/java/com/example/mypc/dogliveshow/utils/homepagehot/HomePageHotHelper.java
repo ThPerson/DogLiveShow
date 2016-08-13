@@ -1,4 +1,4 @@
-package com.example.mypc.dogliveshow.utils.homepagehade;
+package com.example.mypc.dogliveshow.utils.homepagehot;
 
 import com.example.mypc.dogliveshow.config.UrlConfig;
 import com.google.gson.Gson;
@@ -9,14 +9,14 @@ import retrofit2.Retrofit;
 /**
  * Created by MyPC on 2016/8/12.
  */
-public class HomePageHeadHelper {
-    private static HomePageHeadHelper ourInstance = new HomePageHeadHelper();
+public class HomePageHotHelper {
+    private static HomePageHotHelper ourInstance = new HomePageHotHelper();
 
-    public static HomePageHeadHelper getInstance() {
+    public static HomePageHotHelper getInstance() {
         return ourInstance;
     }
 
-    private HomePageHeadHelper() {
+    private HomePageHotHelper() {
     }
     public Retrofit retrofit;
     public Gson gson;
@@ -31,7 +31,7 @@ public class HomePageHeadHelper {
     private void initRetrofit() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(UrlConfig.Path.BASE_URL)
-                .addConverterFactory(new HomePageConvertFactory())
+                .addConverterFactory(new HomePageHotConvertFactory())
                 .build();
     }
 

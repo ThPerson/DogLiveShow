@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.bean.homepagetitle.HomePage;
 import com.example.mypc.dogliveshow.config.UrlConfig;
@@ -21,6 +22,14 @@ import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageHeadCo
 import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageHeadModel;
 import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageHeadPresenter;
 import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageTitleAdapter;
+import com.example.mypc.dogliveshow.main.ui.homepage.homepagehotvideo.HomePageHotAdapter;
+import com.example.mypc.dogliveshow.main.ui.homepage.homepagehotvideo.HomePageHotContract;
+import com.example.mypc.dogliveshow.main.ui.homepage.homepagehotvideo.HomePageHotModel;
+import com.example.mypc.dogliveshow.main.ui.homepage.homepagehotvideo.HomePageHotPresenter;
+import com.example.mypc.dogliveshow.main.ui.homepage.homepagereclive.HomePageRecLiveAdapter;
+import com.example.mypc.dogliveshow.main.ui.homepage.homepagereclive.HomePageRecLiveContract;
+import com.example.mypc.dogliveshow.main.ui.homepage.homepagereclive.HomePageRecLiveModel;
+import com.example.mypc.dogliveshow.main.ui.homepage.homepagereclive.HomePageRecLivePresenter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +42,7 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomePageFragment extends Fragment implements HomePageHeadContract.View {
+public class HomePageFragment extends Fragment implements HomePageHeadContract.View, HomePageRecLiveContract.View,HomePageHotContract.View {
 
 
     @BindView(R.id.tv_title)
@@ -53,11 +62,22 @@ public class HomePageFragment extends Fragment implements HomePageHeadContract.V
     @BindView(R.id.recycler_hot_fire)
     RecyclerView recyclerHotFire;
     private HomePageTitleAdapter homePageTitleAdapter;
+    private HomePageRecLiveAdapter recLiveAdapter;
+    private HomePageHotAdapter hotAdapter;
     private HomePageHeadContract.Model model;
     private HomePageHeadContract.Persenter persenter;
+    private HomePageRecLiveContract.Model recModel;
+    private HomePageRecLiveContract.Persenter recLivePresenter;
+    private HomePageHotContract.Model hotModel;
+    private HomePageHotContract.Persenter hotPersenter;
     private List<HomePage.ConLiveBean.DataListBean.MyArrayListBean> mList;
     private List<HomePage.ConLiveBean.DataListBean.MyArrayListBean> xList;
+    private List<HomePage.RecLiveBean.DataListBean.MyArrayListBean> recList;
+    private List<HomePage.RecLiveBean.DataListBean.MyArrayListBean> xRecList;
+    private List<HomePage.HotLiveBean.DataListBean.MyArrayListBean> hotList;
+    private List<HomePage.HotLiveBean.DataListBean.MyArrayListBean> xHotList;
     private Handler handler = new Handler();
+
 
     public HomePageFragment() {
         // Required empty public constructor
@@ -69,17 +89,53 @@ public class HomePageFragment extends Fragment implements HomePageHeadContract.V
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_page, container, false);
         ButterKnife.bind(this, view);
-        model = new HomePageHeadModel();
+
+
+        getHeadImage();
+        getRecLiveRes();
+        getHomeHot();
+        return view;
+    }
+
+    private void getHeadImage() {
         mList = new ArrayList<>();
         xList = new ArrayList<>();
+        model = new HomePageHeadModel();
         persenter = new HomePageHeadPresenter(this, model);
         persenter.getData(getParams());
         StaggeredGridLayoutManager sgm = new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
-//        LinearLayoutManager llm = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,true);
         recyHomeHeadTitle.setLayoutManager(sgm);
         homePageTitleAdapter = new HomePageTitleAdapter(R.layout.home_page_head_item, xList);
         recyHomeHeadTitle.setAdapter(homePageTitleAdapter);
-        return view;
+        homePageTitleAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, int i) {
+                Toast.makeText(getActivity(),"i+++++"+i,Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void getRecLiveRes() {
+        recList = new ArrayList<>();
+        xRecList = new ArrayList<>();
+        recModel = new HomePageRecLiveModel();
+        recLivePresenter = new HomePageRecLivePresenter(this, recModel);
+        recLivePresenter.getData(getParams());
+        StaggeredGridLayoutManager sgm = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        recyclerHomePageForyou.setLayoutManager(sgm);
+        recLiveAdapter = new HomePageRecLiveAdapter(R.layout.home_rec_live_item, xRecList);
+        recyclerHomePageForyou.setAdapter(recLiveAdapter);
+    }
+    private void getHomeHot() {
+        hotList = new ArrayList<>();
+        xHotList = new ArrayList<>();
+        hotModel = new HomePageHotModel();
+        hotPersenter = new HomePageHotPresenter(this, hotModel);
+        hotPersenter.getData(getParams());
+        StaggeredGridLayoutManager sgm = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        recyclerHotFire.setLayoutManager(sgm);
+        hotAdapter = new HomePageHotAdapter(R.layout.home_rec_live_item, xHotList);
+        recyclerHotFire.setAdapter(hotAdapter);
     }
 
     @OnClick({R.id.iv_search_view, R.id.tv_btn_more})
@@ -109,21 +165,58 @@ public class HomePageFragment extends Fragment implements HomePageHeadContract.V
     }
 
 
-    @Override
-    public void onSuccess(final HomePage list) {
+    private void setHeadRecLive(final HomePage list) {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                mList.add(list.getConLive().getDataList().get(0).getMyArrayList().get(0));
-                mList.add(list.getConLive().getDataList().get(0).getMyArrayList().get(1));
-                mList.add(list.getConLive().getDataList().get(0).getMyArrayList().get(2));
-                mList.add(list.getConLive().getDataList().get(0).getMyArrayList().get(3));
+                for (int i = 0; i <list.getRecLive().getDataList().get(0).getMyArrayList().size() ; i++) {
+                    recList.add(list.getRecLive().getDataList().get(0).getMyArrayList().get(i));
+                }
+                xRecList.addAll(recList);
+                recLiveAdapter.notifyDataSetChanged();
+
+            }
+        });
+    }
+
+    private void setHeadTitleImage(final HomePage list) {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < list.getConLive().getDataList().get(0).getMyArrayList().size(); i++) {
+                    mList.add(list.getConLive().getDataList().get(0).getMyArrayList().get(i));
+                }
                 xList.addAll(mList);
                 homePageTitleAdapter.notifyDataSetChanged();
             }
         });
+    }
+    private void setHeadHotImage(final HomePage list) {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < list.getHotLive().getDataList().get(0).getMyArrayList().size(); i++) {
+                    hotList.add(list.getHotLive().getDataList().get(0).getMyArrayList().get(i));
+                }
+                xHotList.addAll(hotList);
+                hotAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+
+    @Override
+    public void onSuccess(HomePage list) {
+        if (list.getConLive() != null) {
+            setHeadTitleImage(list);
+        } else if (list.getRecLive() != null) {
+            setHeadRecLive(list);
+
+        }else if(list.getHotLive()!=null){
+            setHeadHotImage(list);
+        }
 
     }
+
 
     @Override
     public void onFild(String msg) {

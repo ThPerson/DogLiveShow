@@ -182,15 +182,15 @@ public class HomePage {
 
                 public static class MapBean {
                     @SerializedName("follows")
-                    private int follows;
+                    private String follows;
                     @SerializedName("gamename_enum")
-                    private int gamenameEnum;
+                    private String gamenameEnum;
                     @SerializedName("channel_enum")
-                    private int channelEnum;
+                    private String channelEnum;
                     @SerializedName("rawcoverimage")
                     private String rawcoverimage;
                     @SerializedName("off_enum")
-                    private int offEnum;
+                    private String offEnum;
                     @SerializedName("sourcename")
                     private String sourcename;
                     @SerializedName("gameurl")
@@ -198,45 +198,45 @@ public class HomePage {
                     @SerializedName("id")
                     private String id;
                     @SerializedName("roomid")
-                    private int roomid;
+                    private String roomid;
                     @SerializedName("sourcesite")
                     private String sourcesite;
                     @SerializedName("title")
                     private String title;
                     @SerializedName("allnum")
-                    private int allnum;
+                    private String allnum;
                     @SerializedName("queryname_enum")
-                    private int querynameEnum;
+                    private String querynameEnum;
                     @SerializedName("invalid")
-                    private int invalid;
+                    private String invalid;
                     @SerializedName("nocopyright")
-                    private int nocopyright;
+                    private String nocopyright;
                     @SerializedName("name")
                     private String name;
                     @SerializedName("usehtml5")
-                    private int usehtml5;
+                    private String usehtml5;
                     @SerializedName("fixrank")
-                    private int fixrank;
+                    private String fixrank;
                     @SerializedName("sogoupv")
-                    private int sogoupv;
+                    private String sogoupv;
                     @SerializedName("gamecoverimage_width")
-                    private int gamecoverimageWidth;
+                    private String gamecoverimageWidth;
                     @SerializedName("html5_allowpopup")
-                    private int html5Allowpopup;
+                    private String html5Allowpopup;
                     @SerializedName("commentator")
                     private String commentator;
                     @SerializedName("renqi")
-                    private int renqi;
+                    private String renqi;
                     @SerializedName("viewers")
-                    private int viewers;
+                    private String viewers;
                     @SerializedName("html5_autoplay")
-                    private int html5Autoplay;
+                    private String html5Autoplay;
                     @SerializedName("url")
                     private String url;
                     @SerializedName("rawcommentatorimage")
                     private String rawcommentatorimage;
                     @SerializedName("gamecoverimage_height")
-                    private int gamecoverimageHeight;
+                    private String gamecoverimageHeight;
                     @SerializedName("html5_url")
                     private String html5Url;
                     @SerializedName("finalrank")
@@ -244,31 +244,31 @@ public class HomePage {
                     @SerializedName("infotype")
                     private String infotype;
                     @SerializedName("sourcename_enum")
-                    private int sourcenameEnum;
+                    private String sourcenameEnum;
                     @SerializedName("channel")
                     private String channel;
 
-                    public int getFollows() {
+                    public String getFollows() {
                         return follows;
                     }
 
-                    public void setFollows(int follows) {
+                    public void setFollows(String follows) {
                         this.follows = follows;
                     }
 
-                    public int getGamenameEnum() {
+                    public String getGamenameEnum() {
                         return gamenameEnum;
                     }
 
-                    public void setGamenameEnum(int gamenameEnum) {
+                    public void setGamenameEnum(String gamenameEnum) {
                         this.gamenameEnum = gamenameEnum;
                     }
 
-                    public int getChannelEnum() {
+                    public String getChannelEnum() {
                         return channelEnum;
                     }
 
-                    public void setChannelEnum(int channelEnum) {
+                    public void setChannelEnum(String channelEnum) {
                         this.channelEnum = channelEnum;
                     }
 
@@ -280,11 +280,11 @@ public class HomePage {
                         this.rawcoverimage = rawcoverimage;
                     }
 
-                    public int getOffEnum() {
+                    public String getOffEnum() {
                         return offEnum;
                     }
 
-                    public void setOffEnum(int offEnum) {
+                    public void setOffEnum(String offEnum) {
                         this.offEnum = offEnum;
                     }
 
@@ -312,11 +312,11 @@ public class HomePage {
                         this.id = id;
                     }
 
-                    public int getRoomid() {
+                    public String getRoomid() {
                         return roomid;
                     }
 
-                    public void setRoomid(int roomid) {
+                    public void setRoomid(String roomid) {
                         this.roomid = roomid;
                     }
 
@@ -336,35 +336,35 @@ public class HomePage {
                         this.title = title;
                     }
 
-                    public int getAllnum() {
+                    public String getAllnum() {
                         return allnum;
                     }
 
-                    public void setAllnum(int allnum) {
+                    public void setAllnum(String allnum) {
                         this.allnum = allnum;
                     }
 
-                    public int getQuerynameEnum() {
+                    public String getQuerynameEnum() {
                         return querynameEnum;
                     }
 
-                    public void setQuerynameEnum(int querynameEnum) {
+                    public void setQuerynameEnum(String querynameEnum) {
                         this.querynameEnum = querynameEnum;
                     }
 
-                    public int getInvalid() {
+                    public String getInvalid() {
                         return invalid;
                     }
 
-                    public void setInvalid(int invalid) {
+                    public void setInvalid(String invalid) {
                         this.invalid = invalid;
                     }
 
-                    public int getNocopyright() {
+                    public String getNocopyright() {
                         return nocopyright;
                     }
 
-                    public void setNocopyright(int nocopyright) {
+                    public void setNocopyright(String nocopyright) {
                         this.nocopyright = nocopyright;
                     }
 
@@ -376,43 +376,43 @@ public class HomePage {
                         this.name = name;
                     }
 
-                    public int getUsehtml5() {
+                    public String getUsehtml5() {
                         return usehtml5;
                     }
 
-                    public void setUsehtml5(int usehtml5) {
+                    public void setUsehtml5(String usehtml5) {
                         this.usehtml5 = usehtml5;
                     }
 
-                    public int getFixrank() {
+                    public String getFixrank() {
                         return fixrank;
                     }
 
-                    public void setFixrank(int fixrank) {
+                    public void setFixrank(String fixrank) {
                         this.fixrank = fixrank;
                     }
 
-                    public int getSogoupv() {
+                    public String getSogoupv() {
                         return sogoupv;
                     }
 
-                    public void setSogoupv(int sogoupv) {
+                    public void setSogoupv(String sogoupv) {
                         this.sogoupv = sogoupv;
                     }
 
-                    public int getGamecoverimageWidth() {
+                    public String getGamecoverimageWidth() {
                         return gamecoverimageWidth;
                     }
 
-                    public void setGamecoverimageWidth(int gamecoverimageWidth) {
+                    public void setGamecoverimageWidth(String gamecoverimageWidth) {
                         this.gamecoverimageWidth = gamecoverimageWidth;
                     }
 
-                    public int getHtml5Allowpopup() {
+                    public String getHtml5Allowpopup() {
                         return html5Allowpopup;
                     }
 
-                    public void setHtml5Allowpopup(int html5Allowpopup) {
+                    public void setHtml5Allowpopup(String html5Allowpopup) {
                         this.html5Allowpopup = html5Allowpopup;
                     }
 
@@ -424,27 +424,27 @@ public class HomePage {
                         this.commentator = commentator;
                     }
 
-                    public int getRenqi() {
+                    public String getRenqi() {
                         return renqi;
                     }
 
-                    public void setRenqi(int renqi) {
+                    public void setRenqi(String renqi) {
                         this.renqi = renqi;
                     }
 
-                    public int getViewers() {
+                    public String getViewers() {
                         return viewers;
                     }
 
-                    public void setViewers(int viewers) {
+                    public void setViewers(String viewers) {
                         this.viewers = viewers;
                     }
 
-                    public int getHtml5Autoplay() {
+                    public String getHtml5Autoplay() {
                         return html5Autoplay;
                     }
 
-                    public void setHtml5Autoplay(int html5Autoplay) {
+                    public void setHtml5Autoplay(String html5Autoplay) {
                         this.html5Autoplay = html5Autoplay;
                     }
 
@@ -464,11 +464,11 @@ public class HomePage {
                         this.rawcommentatorimage = rawcommentatorimage;
                     }
 
-                    public int getGamecoverimageHeight() {
+                    public String getGamecoverimageHeight() {
                         return gamecoverimageHeight;
                     }
 
-                    public void setGamecoverimageHeight(int gamecoverimageHeight) {
+                    public void setGamecoverimageHeight(String gamecoverimageHeight) {
                         this.gamecoverimageHeight = gamecoverimageHeight;
                     }
 
@@ -496,11 +496,11 @@ public class HomePage {
                         this.infotype = infotype;
                     }
 
-                    public int getSourcenameEnum() {
+                    public String getSourcenameEnum() {
                         return sourcenameEnum;
                     }
 
-                    public void setSourcenameEnum(int sourcenameEnum) {
+                    public void setSourcenameEnum(String sourcenameEnum) {
                         this.sourcenameEnum = sourcenameEnum;
                     }
 
@@ -635,15 +635,15 @@ public class HomePage {
 
                 public static class MapBean {
                     @SerializedName("follows")
-                    private int follows;
+                    private String follows;
                     @SerializedName("gamename_enum")
-                    private int gamenameEnum;
+                    private String gamenameEnum;
                     @SerializedName("channel_enum")
-                    private int channelEnum;
+                    private String channelEnum;
                     @SerializedName("rawcoverimage")
                     private String rawcoverimage;
                     @SerializedName("off_enum")
-                    private int offEnum;
+                    private String offEnum;
                     @SerializedName("sourcename")
                     private String sourcename;
                     @SerializedName("gameurl")
@@ -657,41 +657,41 @@ public class HomePage {
                     @SerializedName("title")
                     private String title;
                     @SerializedName("allnum")
-                    private int allnum;
+                    private String allnum;
                     @SerializedName("queryname_enum")
-                    private int querynameEnum;
+                    private String querynameEnum;
                     @SerializedName("invalid")
-                    private int invalid;
+                    private String invalid;
                     @SerializedName("nocopyright")
-                    private int nocopyright;
+                    private String nocopyright;
                     @SerializedName("name")
                     private String name;
                     @SerializedName("topsort")
                     private String topsort;
                     @SerializedName("usehtml5")
-                    private int usehtml5;
+                    private String usehtml5;
                     @SerializedName("fixrank")
-                    private int fixrank;
+                    private String fixrank;
                     @SerializedName("sogoupv")
-                    private int sogoupv;
+                    private String sogoupv;
                     @SerializedName("gamecoverimage_width")
-                    private int gamecoverimageWidth;
+                    private String gamecoverimageWidth;
                     @SerializedName("html5_allowpopup")
-                    private int html5Allowpopup;
+                    private String html5Allowpopup;
                     @SerializedName("commentator")
                     private String commentator;
                     @SerializedName("renqi")
-                    private int renqi;
+                    private String renqi;
                     @SerializedName("viewers")
-                    private int viewers;
+                    private String viewers;
                     @SerializedName("html5_autoplay")
-                    private int html5Autoplay;
+                    private String html5Autoplay;
                     @SerializedName("url")
                     private String url;
                     @SerializedName("rawcommentatorimage")
                     private String rawcommentatorimage;
                     @SerializedName("gamecoverimage_height")
-                    private int gamecoverimageHeight;
+                    private String gamecoverimageHeight;
                     @SerializedName("html5_url")
                     private String html5Url;
                     @SerializedName("finalrank")
@@ -699,31 +699,31 @@ public class HomePage {
                     @SerializedName("infotype")
                     private String infotype;
                     @SerializedName("sourcename_enum")
-                    private int sourcenameEnum;
+                    private String sourcenameEnum;
                     @SerializedName("channel")
                     private String channel;
 
-                    public int getFollows() {
+                    public String getFollows() {
                         return follows;
                     }
 
-                    public void setFollows(int follows) {
+                    public void setFollows(String follows) {
                         this.follows = follows;
                     }
 
-                    public int getGamenameEnum() {
+                    public String getGamenameEnum() {
                         return gamenameEnum;
                     }
 
-                    public void setGamenameEnum(int gamenameEnum) {
+                    public void setGamenameEnum(String gamenameEnum) {
                         this.gamenameEnum = gamenameEnum;
                     }
 
-                    public int getChannelEnum() {
+                    public String getChannelEnum() {
                         return channelEnum;
                     }
 
-                    public void setChannelEnum(int channelEnum) {
+                    public void setChannelEnum(String channelEnum) {
                         this.channelEnum = channelEnum;
                     }
 
@@ -735,11 +735,11 @@ public class HomePage {
                         this.rawcoverimage = rawcoverimage;
                     }
 
-                    public int getOffEnum() {
+                    public String getOffEnum() {
                         return offEnum;
                     }
 
-                    public void setOffEnum(int offEnum) {
+                    public void setOffEnum(String offEnum) {
                         this.offEnum = offEnum;
                     }
 
@@ -791,35 +791,35 @@ public class HomePage {
                         this.title = title;
                     }
 
-                    public int getAllnum() {
+                    public String getAllnum() {
                         return allnum;
                     }
 
-                    public void setAllnum(int allnum) {
+                    public void setAllnum(String allnum) {
                         this.allnum = allnum;
                     }
 
-                    public int getQuerynameEnum() {
+                    public String getQuerynameEnum() {
                         return querynameEnum;
                     }
 
-                    public void setQuerynameEnum(int querynameEnum) {
+                    public void setQuerynameEnum(String querynameEnum) {
                         this.querynameEnum = querynameEnum;
                     }
 
-                    public int getInvalid() {
+                    public String getInvalid() {
                         return invalid;
                     }
 
-                    public void setInvalid(int invalid) {
+                    public void setInvalid(String invalid) {
                         this.invalid = invalid;
                     }
 
-                    public int getNocopyright() {
+                    public String getNocopyright() {
                         return nocopyright;
                     }
 
-                    public void setNocopyright(int nocopyright) {
+                    public void setNocopyright(String nocopyright) {
                         this.nocopyright = nocopyright;
                     }
 
@@ -839,43 +839,43 @@ public class HomePage {
                         this.topsort = topsort;
                     }
 
-                    public int getUsehtml5() {
+                    public String getUsehtml5() {
                         return usehtml5;
                     }
 
-                    public void setUsehtml5(int usehtml5) {
+                    public void setUsehtml5(String usehtml5) {
                         this.usehtml5 = usehtml5;
                     }
 
-                    public int getFixrank() {
+                    public String getFixrank() {
                         return fixrank;
                     }
 
-                    public void setFixrank(int fixrank) {
+                    public void setFixrank(String fixrank) {
                         this.fixrank = fixrank;
                     }
 
-                    public int getSogoupv() {
+                    public String getSogoupv() {
                         return sogoupv;
                     }
 
-                    public void setSogoupv(int sogoupv) {
+                    public void setSogoupv(String sogoupv) {
                         this.sogoupv = sogoupv;
                     }
 
-                    public int getGamecoverimageWidth() {
+                    public String getGamecoverimageWidth() {
                         return gamecoverimageWidth;
                     }
 
-                    public void setGamecoverimageWidth(int gamecoverimageWidth) {
+                    public void setGamecoverimageWidth(String gamecoverimageWidth) {
                         this.gamecoverimageWidth = gamecoverimageWidth;
                     }
 
-                    public int getHtml5Allowpopup() {
+                    public String getHtml5Allowpopup() {
                         return html5Allowpopup;
                     }
 
-                    public void setHtml5Allowpopup(int html5Allowpopup) {
+                    public void setHtml5Allowpopup(String html5Allowpopup) {
                         this.html5Allowpopup = html5Allowpopup;
                     }
 
@@ -887,27 +887,27 @@ public class HomePage {
                         this.commentator = commentator;
                     }
 
-                    public int getRenqi() {
+                    public String getRenqi() {
                         return renqi;
                     }
 
-                    public void setRenqi(int renqi) {
+                    public void setRenqi(String renqi) {
                         this.renqi = renqi;
                     }
 
-                    public int getViewers() {
+                    public String getViewers() {
                         return viewers;
                     }
 
-                    public void setViewers(int viewers) {
+                    public void setViewers(String viewers) {
                         this.viewers = viewers;
                     }
 
-                    public int getHtml5Autoplay() {
+                    public String getHtml5Autoplay() {
                         return html5Autoplay;
                     }
 
-                    public void setHtml5Autoplay(int html5Autoplay) {
+                    public void setHtml5Autoplay(String html5Autoplay) {
                         this.html5Autoplay = html5Autoplay;
                     }
 
@@ -927,11 +927,11 @@ public class HomePage {
                         this.rawcommentatorimage = rawcommentatorimage;
                     }
 
-                    public int getGamecoverimageHeight() {
+                    public String getGamecoverimageHeight() {
                         return gamecoverimageHeight;
                     }
 
-                    public void setGamecoverimageHeight(int gamecoverimageHeight) {
+                    public void setGamecoverimageHeight(String gamecoverimageHeight) {
                         this.gamecoverimageHeight = gamecoverimageHeight;
                     }
 
@@ -959,11 +959,11 @@ public class HomePage {
                         this.infotype = infotype;
                     }
 
-                    public int getSourcenameEnum() {
+                    public String getSourcenameEnum() {
                         return sourcenameEnum;
                     }
 
-                    public void setSourcenameEnum(int sourcenameEnum) {
+                    public void setSourcenameEnum(String sourcenameEnum) {
                         this.sourcenameEnum = sourcenameEnum;
                     }
 
@@ -1098,15 +1098,15 @@ public class HomePage {
 
                 public static class MapBean {
                     @SerializedName("follows")
-                    private int follows;
+                    private String follows;
                     @SerializedName("gamename_enum")
-                    private int gamenameEnum;
+                    private String gamenameEnum;
                     @SerializedName("channel_enum")
-                    private int channelEnum;
+                    private String channelEnum;
                     @SerializedName("rawcoverimage")
                     private String rawcoverimage;
                     @SerializedName("off_enum")
-                    private int offEnum;
+                    private String offEnum;
                     @SerializedName("sourcename")
                     private String sourcename;
                     @SerializedName("gameurl")
@@ -1114,47 +1114,47 @@ public class HomePage {
                     @SerializedName("id")
                     private String id;
                     @SerializedName("roomid")
-                    private int roomid;
+                    private String roomid;
                     @SerializedName("sourcesite")
                     private String sourcesite;
                     @SerializedName("title")
                     private String title;
                     @SerializedName("allnum")
-                    private int allnum;
+                    private String allnum;
                     @SerializedName("queryname_enum")
-                    private int querynameEnum;
+                    private String querynameEnum;
                     @SerializedName("invalid")
-                    private int invalid;
+                    private String invalid;
                     @SerializedName("nocopyright")
-                    private int nocopyright;
+                    private String nocopyright;
                     @SerializedName("name")
                     private String name;
                     @SerializedName("topsort")
                     private String topsort;
                     @SerializedName("usehtml5")
-                    private int usehtml5;
+                    private String usehtml5;
                     @SerializedName("fixrank")
-                    private int fixrank;
+                    private String fixrank;
                     @SerializedName("sogoupv")
-                    private int sogoupv;
+                    private String sogoupv;
                     @SerializedName("gamecoverimage_width")
-                    private int gamecoverimageWidth;
+                    private String gamecoverimageWidth;
                     @SerializedName("html5_allowpopup")
-                    private int html5Allowpopup;
+                    private String html5Allowpopup;
                     @SerializedName("commentator")
                     private String commentator;
                     @SerializedName("renqi")
-                    private int renqi;
+                    private String renqi;
                     @SerializedName("viewers")
-                    private int viewers;
+                    private String viewers;
                     @SerializedName("html5_autoplay")
-                    private int html5Autoplay;
+                    private String html5Autoplay;
                     @SerializedName("url")
                     private String url;
                     @SerializedName("rawcommentatorimage")
                     private String rawcommentatorimage;
                     @SerializedName("gamecoverimage_height")
-                    private int gamecoverimageHeight;
+                    private String gamecoverimageHeight;
                     @SerializedName("html5_url")
                     private String html5Url;
                     @SerializedName("finalrank")
@@ -1162,31 +1162,31 @@ public class HomePage {
                     @SerializedName("infotype")
                     private String infotype;
                     @SerializedName("sourcename_enum")
-                    private int sourcenameEnum;
+                    private String sourcenameEnum;
                     @SerializedName("channel")
                     private String channel;
 
-                    public int getFollows() {
+                    public String getFollows() {
                         return follows;
                     }
 
-                    public void setFollows(int follows) {
+                    public void setFollows(String follows) {
                         this.follows = follows;
                     }
 
-                    public int getGamenameEnum() {
+                    public String getGamenameEnum() {
                         return gamenameEnum;
                     }
 
-                    public void setGamenameEnum(int gamenameEnum) {
+                    public void setGamenameEnum(String gamenameEnum) {
                         this.gamenameEnum = gamenameEnum;
                     }
 
-                    public int getChannelEnum() {
+                    public String getChannelEnum() {
                         return channelEnum;
                     }
 
-                    public void setChannelEnum(int channelEnum) {
+                    public void setChannelEnum(String channelEnum) {
                         this.channelEnum = channelEnum;
                     }
 
@@ -1198,11 +1198,11 @@ public class HomePage {
                         this.rawcoverimage = rawcoverimage;
                     }
 
-                    public int getOffEnum() {
+                    public String getOffEnum() {
                         return offEnum;
                     }
 
-                    public void setOffEnum(int offEnum) {
+                    public void setOffEnum(String offEnum) {
                         this.offEnum = offEnum;
                     }
 
@@ -1230,11 +1230,11 @@ public class HomePage {
                         this.id = id;
                     }
 
-                    public int getRoomid() {
+                    public String getRoomid() {
                         return roomid;
                     }
 
-                    public void setRoomid(int roomid) {
+                    public void setRoomid(String roomid) {
                         this.roomid = roomid;
                     }
 
@@ -1254,35 +1254,35 @@ public class HomePage {
                         this.title = title;
                     }
 
-                    public int getAllnum() {
+                    public String getAllnum() {
                         return allnum;
                     }
 
-                    public void setAllnum(int allnum) {
+                    public void setAllnum(String allnum) {
                         this.allnum = allnum;
                     }
 
-                    public int getQuerynameEnum() {
+                    public String getQuerynameEnum() {
                         return querynameEnum;
                     }
 
-                    public void setQuerynameEnum(int querynameEnum) {
+                    public void setQuerynameEnum(String querynameEnum) {
                         this.querynameEnum = querynameEnum;
                     }
 
-                    public int getInvalid() {
+                    public String getInvalid() {
                         return invalid;
                     }
 
-                    public void setInvalid(int invalid) {
+                    public void setInvalid(String invalid) {
                         this.invalid = invalid;
                     }
 
-                    public int getNocopyright() {
+                    public String getNocopyright() {
                         return nocopyright;
                     }
 
-                    public void setNocopyright(int nocopyright) {
+                    public void setNocopyright(String nocopyright) {
                         this.nocopyright = nocopyright;
                     }
 
@@ -1302,43 +1302,43 @@ public class HomePage {
                         this.topsort = topsort;
                     }
 
-                    public int getUsehtml5() {
+                    public String getUsehtml5() {
                         return usehtml5;
                     }
 
-                    public void setUsehtml5(int usehtml5) {
+                    public void setUsehtml5(String usehtml5) {
                         this.usehtml5 = usehtml5;
                     }
 
-                    public int getFixrank() {
+                    public String getFixrank() {
                         return fixrank;
                     }
 
-                    public void setFixrank(int fixrank) {
+                    public void setFixrank(String fixrank) {
                         this.fixrank = fixrank;
                     }
 
-                    public int getSogoupv() {
+                    public String getSogoupv() {
                         return sogoupv;
                     }
 
-                    public void setSogoupv(int sogoupv) {
+                    public void setSogoupv(String sogoupv) {
                         this.sogoupv = sogoupv;
                     }
 
-                    public int getGamecoverimageWidth() {
+                    public String getGamecoverimageWidth() {
                         return gamecoverimageWidth;
                     }
 
-                    public void setGamecoverimageWidth(int gamecoverimageWidth) {
+                    public void setGamecoverimageWidth(String gamecoverimageWidth) {
                         this.gamecoverimageWidth = gamecoverimageWidth;
                     }
 
-                    public int getHtml5Allowpopup() {
+                    public String getHtml5Allowpopup() {
                         return html5Allowpopup;
                     }
 
-                    public void setHtml5Allowpopup(int html5Allowpopup) {
+                    public void setHtml5Allowpopup(String html5Allowpopup) {
                         this.html5Allowpopup = html5Allowpopup;
                     }
 
@@ -1350,27 +1350,27 @@ public class HomePage {
                         this.commentator = commentator;
                     }
 
-                    public int getRenqi() {
+                    public String getRenqi() {
                         return renqi;
                     }
 
-                    public void setRenqi(int renqi) {
+                    public void setRenqi(String renqi) {
                         this.renqi = renqi;
                     }
 
-                    public int getViewers() {
+                    public String getViewers() {
                         return viewers;
                     }
 
-                    public void setViewers(int viewers) {
+                    public void setViewers(String viewers) {
                         this.viewers = viewers;
                     }
 
-                    public int getHtml5Autoplay() {
+                    public String getHtml5Autoplay() {
                         return html5Autoplay;
                     }
 
-                    public void setHtml5Autoplay(int html5Autoplay) {
+                    public void setHtml5Autoplay(String html5Autoplay) {
                         this.html5Autoplay = html5Autoplay;
                     }
 
@@ -1390,11 +1390,11 @@ public class HomePage {
                         this.rawcommentatorimage = rawcommentatorimage;
                     }
 
-                    public int getGamecoverimageHeight() {
+                    public String getGamecoverimageHeight() {
                         return gamecoverimageHeight;
                     }
 
-                    public void setGamecoverimageHeight(int gamecoverimageHeight) {
+                    public void setGamecoverimageHeight(String gamecoverimageHeight) {
                         this.gamecoverimageHeight = gamecoverimageHeight;
                     }
 
@@ -1422,11 +1422,11 @@ public class HomePage {
                         this.infotype = infotype;
                     }
 
-                    public int getSourcenameEnum() {
+                    public String getSourcenameEnum() {
                         return sourcenameEnum;
                     }
 
-                    public void setSourcenameEnum(int sourcenameEnum) {
+                    public void setSourcenameEnum(String sourcenameEnum) {
                         this.sourcenameEnum = sourcenameEnum;
                     }
 
