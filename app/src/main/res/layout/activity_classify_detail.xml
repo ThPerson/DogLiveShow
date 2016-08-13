@@ -5,37 +5,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#FE7053"
-        android:orientation="horizontal"
         android:padding="10dp">
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/classify_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="back"
+            android:src="@mipmap/back_icon"/>
         <LinearLayout
+            android:id="@+id/ll_text"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:id="@+id/tv_play"
+                android:gravity="center"
+                android:id="@+id/tv_classify_play"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="直播"
                 android:textColor="#fff"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:background="@mipmap/tab_left_unselected"/>
             <TextView
-                android:layout_marginLeft="10dp"
-                android:id="@+id/tv_video"
+                android:gravity="center"
+                android:id="@+id/tv_classify_video"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="视频"
                 android:textColor="#fff"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:background="@mipmap/tab_right_unselected"/>
         </LinearLayout>
         <ImageView
             android:layout_marginRight="10dp"
@@ -45,5 +53,11 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/search_icon"/>
     </RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_classify_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

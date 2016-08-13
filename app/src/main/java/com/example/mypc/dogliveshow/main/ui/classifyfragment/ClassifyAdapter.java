@@ -1,14 +1,15 @@
 package com.example.mypc.dogliveshow.main.ui.classifyfragment;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.bean.classifybean.DataListBean;
+import com.example.mypc.dogliveshow.main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity;
 
 import java.util.List;
 
@@ -26,12 +27,16 @@ public class ClassifyAdapter extends BaseQuickAdapter<DataListBean> {
                 .setText(R.id.tv_classify_livenum,dataListBean.getLivenum()+"条直播");
         Glide.with(baseViewHolder.convertView.getContext())
                 .load(dataListBean.getImgurl())
+                .placeholder(R.mipmap.no_result_icon)
+                .error(R.mipmap.no_result_icon)
                 .into((ImageView) baseViewHolder.getView(R.id.iv_classify_rel));
         baseViewHolder.convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(baseViewHolder.convertView.getContext(), "点击了", Toast.LENGTH_SHORT).show();
+                baseViewHolder.convertView.getContext().startActivity(new Intent(baseViewHolder.convertView.getContext(), ClassifyDetailActivity.class));
             }
         });
     }
+
+
 }

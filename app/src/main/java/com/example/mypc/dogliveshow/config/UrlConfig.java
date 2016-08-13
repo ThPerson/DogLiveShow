@@ -6,15 +6,22 @@ package com.example.mypc.dogliveshow.config;
 public class UrlConfig {
     public static class Path{
         public static final String BASE_URL = "http://zhibo.sogou.com/";
+
         //主播头条基础URL
         public static final String HEAD_LINE_BASE_URL="http://v.sogou.com/";
+        //栏目分类
         public static final String CLASSIFY_URL = "gamelivedata?";
         //主播头条URL
         public static final String HEAD_LINE_URL="app/liveheadlines/get_user_article/";
 
         public static final String HOMEPAGE_URL ="getAppIndexData";
+        //栏目分类-->直播
+        public static final String CLASSIFY_COMMENTATOR_URL = "livesearch?";
+        //栏目分类-->视频
+        public static final String CLASSIFY_VIDEO_URL = "searchgame?";
     }
-    public static class ClassifyKey {
+    //栏目分类
+    public static class ClassifyKey{
         public static final String SYSVER = "sysVer";
         public static final String PAGESIZE = "pageSize";
         public static final String SYSTEM = "system";
@@ -48,5 +55,13 @@ public class UrlConfig {
         public static final String VERSION = "version";
         public static final String APPID = "appid";
     }
+    public static class CommentatorKey{
+        public static final String SYSVER = "sysVer";
+        public static final String SYSTEM = "system";
+        public static final String APPVER = "appVer";
+        public static final String RESULTTYPE = "resulttype";
+        public static final String REQ_FROM = "req_from";
 
+
+    }
 }
