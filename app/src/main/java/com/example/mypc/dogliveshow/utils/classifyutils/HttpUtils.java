@@ -1,9 +1,6 @@
 package com.example.mypc.dogliveshow.utils.classifyutils;
 
-import android.util.Log;
-
 import com.example.mypc.dogliveshow.bean.classifybean.ClassifyBean;
-import com.example.mypc.dogliveshow.bean.classifybean.DataListBean;
 import com.example.mypc.dogliveshow.utils.RetrofitHelper;
 
 import java.util.HashMap;
@@ -37,10 +34,6 @@ public class HttpUtils {
         classifyBeanCall.enqueue(new Callback<ClassifyBean>() {
             @Override
             public void onResponse(Call<ClassifyBean> call, Response<ClassifyBean> response) {
-                ClassifyBean body = response.body();
-                for (DataListBean datalistbean : body.getDataList()) {
-                    Log.i("TAG",datalistbean.getName());
-                }
                 beanHttpCallback.onSucess(response.body());
             }
 

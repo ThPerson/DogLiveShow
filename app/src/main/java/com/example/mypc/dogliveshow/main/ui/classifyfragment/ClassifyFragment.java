@@ -3,9 +3,9 @@ package com.example.mypc.dogliveshow.main.ui.classifyfragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +35,8 @@ public class ClassifyFragment extends Fragment implements ClassifyContract.View{
 
     @BindView(R.id.classify_recycler_view)
     RecyclerView recyclerClassify;
-
-
+    @BindView(R.id.swipe_classify)
+    SwipeRefreshLayout swipeContainer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,6 +62,7 @@ public class ClassifyFragment extends Fragment implements ClassifyContract.View{
     }
 
     private void initView() {
+        pullToRefresh();
         mList = new ArrayList<>();
         classifyAdapter = new ClassifyAdapter(R.layout.item_classify_list,mList);
         layoutManager = new GridLayoutManager(getContext(),3);
@@ -69,7 +70,22 @@ public class ClassifyFragment extends Fragment implements ClassifyContract.View{
         recyclerClassify.setAdapter(classifyAdapter);
     }
 
-    
+    //下拉刷新
+    private void pullToRefresh() {
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mList.removeAll(mList);
+                        presenter.initData(initParams());
+                        swipeContainer.setRefreshing(false);
+                    }
+                }, 5000);
+            }
+        });
+    }
 
     @Override
     public void onSuccessGetClassify(final List<DataListBean> dataListBeen) {
@@ -77,7 +93,6 @@ public class ClassifyFragment extends Fragment implements ClassifyContract.View{
             @Override
             public void run() {
                 mList.addAll(dataListBeen);
-                Log.e("TAG","-------------------------"+mList.size());
                 classifyAdapter.notifyDataSetChanged();
             }
         });
