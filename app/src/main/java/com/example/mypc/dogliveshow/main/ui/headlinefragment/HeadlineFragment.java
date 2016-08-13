@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -27,6 +29,8 @@ public class HeadlineFragment extends Fragment implements HeadLineContract.View 
 
     @BindView(R.id.lv_head_line)
     ListView lvHeadLine;
+    @BindView(R.id.swipe_container)
+    SwipeRefreshLayout swipeContainer;
 
     private HeadLineContract.Model model;
     private HeadLineContract.Presenter presenter;
@@ -34,7 +38,8 @@ public class HeadlineFragment extends Fragment implements HeadLineContract.View 
     };
     private List<DataListBean> dataBeanList;
     private HeadLineAdapter headLineAdapter;
-
+    private boolean is_divPage;
+    private int page = 20;
     public HeadlineFragment() {
     }
 
@@ -44,20 +49,59 @@ public class HeadlineFragment extends Fragment implements HeadLineContract.View 
         View view = inflater.inflate(R.layout.fragment_headline, container, false);
         ButterKnife.bind(this, view);
         initView();
+        pullToRefresh();
         model = new HeadLineModel();
         presenter = new HeadLinePresenter(model, this);
         presenter.getHeadLineData(initHeadLineParams());
         lvHeadLine.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(),HeadLineWeb.class);
-                intent.putExtra("url",dataBeanList.get(position).getDetailUrl());
+                Intent intent = new Intent(getActivity(), HeadLineWeb.class);
+                intent.putExtra("url", dataBeanList.get(position).getDetailUrl());
                 startActivity(intent);
             }
         });
+//上拉加载
+        lvHeadLine.setOnScrollListener(new AbsListView.OnScrollListener() {
+
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                if (is_divPage && scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
+                    Toast.makeText(getContext(), "正在获取更多数据...", Toast.LENGTH_SHORT).show();
+                    //lv.setTag(2);
+                    HashMap<String, String> stringStringHashMap = initHeadLineParams();
+                    //String page = stringStringHashMap.get("PAGE");
+
+                    stringStringHashMap.put(UrlConfig.HeadLineKey.PAGE_SIZE, String.valueOf(page+=20));
+                    dataBeanList.removeAll(dataBeanList);
+                    presenter.getHeadLineData(stringStringHashMap);
+                }
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                is_divPage = (firstVisibleItem + visibleItemCount == totalItemCount);
+            }
+        });
+
+
         return view;
     }
-
+    private void pullToRefresh() {
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        dataBeanList.removeAll(dataBeanList);
+                        presenter.getHeadLineData(initHeadLineParams());
+                        swipeContainer.setRefreshing(false);
+                    }
+                }, 3000);
+            }
+        });
+    }
     //初始化
     private void initView() {
         dataBeanList = new ArrayList<>();
