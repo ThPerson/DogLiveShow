@@ -49,10 +49,11 @@ public class HeadlineFragment extends Fragment implements HeadLineContract.View 
         View view = inflater.inflate(R.layout.fragment_headline, container, false);
         ButterKnife.bind(this, view);
         initView();
-        pullToRefresh();
+
         model = new HeadLineModel();
         presenter = new HeadLinePresenter(model, this);
         presenter.getHeadLineData(initHeadLineParams());
+        pullToRefresh();
         lvHeadLine.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -98,7 +99,7 @@ public class HeadlineFragment extends Fragment implements HeadLineContract.View 
                         presenter.getHeadLineData(initHeadLineParams());
                         swipeContainer.setRefreshing(false);
                     }
-                }, 3000);
+                }, 1000);
             }
         });
     }

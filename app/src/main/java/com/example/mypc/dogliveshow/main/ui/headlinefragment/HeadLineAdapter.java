@@ -141,11 +141,13 @@ public class HeadLineAdapter extends BaseAdapter {
         Glide.with(parent.getContext())
                 .load(mList.get(position).getUserInfo().getIcon())
                 .placeholder(R.mipmap.user_head)
+                .error(R.mipmap.user_head)
                 .transform(new GlideCircleTransform(parent.getContext()))
                 .into(holder3.ivUserHead3);
         Glide.with(parent.getContext())
                 .load(mList.get(position).getPics().get(0).getSmallUrl())
-                .placeholder(R.mipmap.no_copy_back)
+                .placeholder(R.mipmap.no_result_icon)
+                .error(R.mipmap.no_result_icon)
                 .into(holder3.ivLogo3);
     }
 
@@ -173,11 +175,13 @@ public class HeadLineAdapter extends BaseAdapter {
         Glide.with(parent.getContext())
                 .load(mList.get(position).getUserInfo().getIcon())
                 .placeholder(R.mipmap.user_head)
+                .error(R.mipmap.user_head)
                 .transform(new GlideCircleTransform(parent.getContext()))
                 .into(holder.ivUserHead);
         Glide.with(parent.getContext())
                 .load(mList.get(position).getPics().get(0).getSmallUrl())
-                .placeholder(R.mipmap.no_copy_back)
+                .placeholder(R.mipmap.no_result_icon)
+                .error(R.mipmap.no_result_icon)
                 .into(holder.ivLogo);
     }
 

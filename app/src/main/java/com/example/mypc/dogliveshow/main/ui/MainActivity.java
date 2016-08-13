@@ -1,5 +1,6 @@
 package com.example.mypc.dogliveshow.main.ui;
 
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +14,7 @@ import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.base.BaseActivity;
 import com.example.mypc.dogliveshow.main.ui.classifyfragment.ClassifyFragment;
 import com.example.mypc.dogliveshow.main.ui.headlinefragment.HeadlineFragment;
+import com.example.mypc.dogliveshow.main.ui.mydog.MyDogFragment;
 
 import butterknife.BindView;
 import butterknife.OnClick;

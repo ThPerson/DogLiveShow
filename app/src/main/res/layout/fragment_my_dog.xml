@@ -1,13 +1,206 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mypc.dogliveshow.main.ui.MyDogFragment">
+    tools:context=".main.ui.mydog.MyDogFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="170dp"
+        android:padding="10dp"
+        android:background="@mipmap/mine_title_bg">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_user_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/user_icon_bg"/>
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textColor="#D6624B"
+            android:textSize="14sp"
+            android:background="@drawable/login_bg"
+            android:layout_below="@+id/civ_user_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"/>
+        <ImageView
+            android:id="@+id/head_setting"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/icon_setting"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+    <View
+        android:layout_marginTop="5dp"
+        style="@style/line" />
+    <!--主播时刻-->
+    <RelativeLayout
+        android:id="@+id/rl_anchor_time"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_camera"
+            android:src="@mipmap/icon_camera"
+            style="@style/head_img"/>
+        <TextView
+            style="@style/head_text"
+            android:layout_toRightOf="@+id/iv_camera"
+            android:text="主播时刻"
+            />
+        <ImageView
+            style="@style/head_img_arrow"/>
+    </RelativeLayout>
+    <View style="@style/line" />
+    <!--我的关注-->
+    <RelativeLayout
+        android:id="@+id/rl_my_watch"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_follow"
+            android:src="@mipmap/icon_setting_follow"
+            style="@style/head_img"/>
+        <TextView
+            style="@style/head_text"
+            android:layout_toRightOf="@+id/iv_follow"
+            android:text="我的关注"
+            />
+        <ImageView
+            style="@style/head_img_arrow"/>
+    </RelativeLayout>
+    <View style="@style/line" />
+    <!--主播排行-->
+    <RelativeLayout
+        android:id="@+id/rv_anchor_ranking"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_ranking"
+            android:src="@mipmap/icon_setting_ranking"
+            style="@style/head_img"/>
+        <TextView
+            style="@style/head_text"
+            android:layout_toRightOf="@+id/iv_ranking"
+            android:text="主播排行"
+            />
+        <ImageView
+            style="@style/head_img_arrow"/>
+    </RelativeLayout>
+    <View style="@style/line" />
+    <!--平台大全-->
+    <RelativeLayout
+        android:id="@+id/rl_plat_form"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_play_form"
+            android:src="@mipmap/icon_setting_platform_all"
+            style="@style/head_img"/>
+        <TextView
+            style="@style/head_text"
+            android:layout_toRightOf="@+id/iv_play_form"
+            android:text="平台大全"
+            />
+        <ImageView
+            style="@style/head_img_arrow"/>
+    </RelativeLayout>
+    <View style="@style/line" />
+    <!--离线视频-->
+    <RelativeLayout
+        android:id="@+id/rl_offline"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_offline"
+            android:src="@mipmap/icon_setting_offline"
+            style="@style/head_img"/>
+        <TextView
+            style="@style/head_text"
+            android:layout_toRightOf="@+id/iv_offline"
+            android:text="离线视频"
+            />
+        <ImageView
+            android:id="@+id/iv_offline_arrow"
+            style="@style/head_img_arrow"/>
+        <TextView
+            android:id="@+id/tv_offline_msg_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_offline_arrow"
+            android:text="暂无已下载完成的视频"
+            android:textColor="#aaa"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <View style="@style/line" />
+    <!--我的收藏-->
+    <RelativeLayout
+        android:id="@+id/rl_fav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_fav"
+            android:src="@mipmap/icon_setting_fav"
+            style="@style/head_img"/>
+        <TextView
+            style="@style/head_text"
+            android:layout_toRightOf="@+id/iv_fav"
+            android:text="我的收藏"
+            />
+        <ImageView
+            android:id="@+id/fav_arrow"
+            style="@style/head_img_arrow"/>
+        <TextView
+            android:id="@+id/tv_fav_msg_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/fav_arrow"
+            android:text="暂无"
+            android:textColor="#aaa"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <View style="@style/line" />
+    <!--观看记录-->
+    <RelativeLayout
+        android:id="@+id/rl_history"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_history"
+            android:src="@mipmap/icon_setting_history"
+            style="@style/head_img"/>
+        <TextView
+            style="@style/head_text"
+            android:layout_toRightOf="@+id/iv_history"
+            android:text="观看记录"
+            />
+        <ImageView
+            style="@style/head_img_arrow"/>
+    </RelativeLayout>
 
-</FrameLayout>
+
+
+
+
+</LinearLayout>
+
+
+</ScrollView>
