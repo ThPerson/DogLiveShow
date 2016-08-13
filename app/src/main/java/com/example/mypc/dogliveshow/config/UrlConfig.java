@@ -6,16 +6,34 @@ package com.example.mypc.dogliveshow.config;
 public class UrlConfig {
     public static class Path{
         public static final String BASE_URL = "http://zhibo.sogou.com/";
+        //主播头条基础URL
+        public static final String HEAD_LINE_BASE_URL="http://v.sogou.com/";
         public static final String CLASSIFY_URL = "gamelivedata?";
+        //主播头条URL
+        public static final String HEAD_LINE_URL="app/liveheadlines/get_user_article/";
+
         public static final String HOMEPAGE_URL ="getAppIndexData";
     }
-    public static class ClassifyKey{
+    public static class ClassifyKey {
         public static final String SYSVER = "sysVer";
         public static final String PAGESIZE = "pageSize";
         public static final String SYSTEM = "system";
         public static final String APPVER = "appVer";
         public static final String TYPE = "type";
         public static final String PAGENO = "pageNo";
+    }
+    //主播头条KEY
+    public static class HeadLineKey{
+        public static final String USER_ID="user_id";
+        public static final String OS="os";
+        public static final String USERKEY="userKey";
+        public static final String ORDER_ID="order_id";
+        public static final String PAGE_SIZE="page_size";
+        public static final String CATE_ID="cate_id";
+        public static final String IS_NEW="is_new";
+        public static final String SYSTEM="system";
+        public static final String VERSION="version";
+        public static final String APPID="appid";
     }
 //type=json&dataType=0&pageNo2=1&pageSize2=6&pageNo3=1&pageSize3=100&system=android&
 // version=3.1.0&appid=ec1179d6bfd406ba4fac855010ee80c728df297d
@@ -30,4 +48,5 @@ public class UrlConfig {
         public static final String VERSION = "version";
         public static final String APPID = "appid";
     }
+
 }

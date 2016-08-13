@@ -22,6 +22,10 @@
             android:textColor="#fff"
             android:textSize="18sp"/>
     </RelativeLayout>
+    <ListView
+        android:id="@+id/lv_head_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
 

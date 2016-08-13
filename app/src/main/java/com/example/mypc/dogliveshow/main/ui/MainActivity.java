@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.base.BaseActivity;
 import com.example.mypc.dogliveshow.main.ui.classifyfragment.ClassifyFragment;
+import com.example.mypc.dogliveshow.main.ui.headlinefragment.HeadlineFragment;
 
 import butterknife.BindView;
 import butterknife.OnClick;
