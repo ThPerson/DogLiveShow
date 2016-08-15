@@ -1,7 +1,6 @@
 package com.example.mypc.dogliveshow.utils.classifyutils;
 
 import com.example.mypc.dogliveshow.bean.classifybean.ClassifyBean;
-import com.example.mypc.dogliveshow.utils.RetrofitHelper;
 
 import java.util.HashMap;
 
@@ -29,7 +28,7 @@ public class HttpUtils {
     public void getClassifyData(HashMap<String,String> params, final HttpCallback<ClassifyBean> beanHttpCallback){
         Call<ClassifyBean> classifyBeanCall = RetrofitHelper
                 .getInstance()
-                .creatRetrfitService(IClassifyService.class)
+                .creatRetrofitService(IClassifyService.class)
                 .getClassifyBean(params);
         classifyBeanCall.enqueue(new Callback<ClassifyBean>() {
             @Override

@@ -1,4 +1,4 @@
-package com.example.mypc.dogliveshow.utils;
+package com.example.mypc.dogliveshow.utils.classifyutils;
 
 import com.example.mypc.dogliveshow.config.UrlConfig;
 import com.google.gson.Gson;
@@ -21,7 +21,7 @@ public class RetrofitHelper {
     }
     public Retrofit retrofit;
     public Gson gson;
-    public <T> T creatRetrfitService(Class<T> service){
+    public <T> T creatRetrofitService(Class<T> service){
         if(retrofit == null){
             creatGson();
             initRetrofit();

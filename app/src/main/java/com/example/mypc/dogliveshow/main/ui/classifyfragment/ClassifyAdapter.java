@@ -22,7 +22,7 @@ public class ClassifyAdapter extends BaseQuickAdapter<DataListBean> {
     }
 
     @Override
-    protected void convert(final BaseViewHolder baseViewHolder, DataListBean dataListBean) {
+    protected void convert(final BaseViewHolder baseViewHolder, final DataListBean dataListBean) {
         baseViewHolder.setText(R.id.tv_classify_name,dataListBean.getName())
                 .setText(R.id.tv_classify_livenum,dataListBean.getLivenum()+"条直播");
         Glide.with(baseViewHolder.convertView.getContext())
@@ -33,7 +33,10 @@ public class ClassifyAdapter extends BaseQuickAdapter<DataListBean> {
         baseViewHolder.convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                baseViewHolder.convertView.getContext().startActivity(new Intent(baseViewHolder.convertView.getContext(), ClassifyDetailActivity.class));
+                String name = dataListBean.getName();
+                Intent intent = new Intent(baseViewHolder.convertView.getContext(),ClassifyDetailActivity.class);
+                intent.putExtra("name",name);
+                baseViewHolder.convertView.getContext().startActivity(intent);
             }
         });
     }

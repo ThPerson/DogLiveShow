@@ -1,4 +1,4 @@
-package com.example.mypc.dogliveshow.bean.classifybean.commentatorbean;
+package com.example.mypc.dogliveshow.bean.classifybean.commentbean;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -20,20 +20,24 @@ public class GameinfoBean {
     private String sourcename;
     @SerializedName("gameurl")
     private String gameurl;
-    @SerializedName("id")
-    private long id;
     @SerializedName("roomid")
     private int roomid;
-    @SerializedName("sourcesite")
-    private String sourcesite;
+    @SerializedName("id")
+    private long id;
+    @SerializedName("jsdesc")
+    private String jsdesc;
     @SerializedName("title")
     private String title;
     @SerializedName("allnum")
     private int allnum;
+    @SerializedName("sourcesite")
+    private String sourcesite;
     @SerializedName("queryname_enum")
     private int querynameEnum;
     @SerializedName("invalid")
     private int invalid;
+    @SerializedName("jsid")
+    private long jsid;
     @SerializedName("nocopyright")
     private int nocopyright;
     @SerializedName("name")
@@ -66,6 +70,8 @@ public class GameinfoBean {
     private String html5Url;
     @SerializedName("finalrank")
     private int finalrank;
+    @SerializedName("jstype")
+    private String jstype;
     @SerializedName("infotype")
     private String infotype;
     @SerializedName("sourcename_enum")
@@ -129,14 +135,6 @@ public class GameinfoBean {
         this.gameurl = gameurl;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public int getRoomid() {
         return roomid;
     }
@@ -145,12 +143,20 @@ public class GameinfoBean {
         this.roomid = roomid;
     }
 
-    public String getSourcesite() {
-        return sourcesite;
+    public long getId() {
+        return id;
     }
 
-    public void setSourcesite(String sourcesite) {
-        this.sourcesite = sourcesite;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getJsdesc() {
+        return jsdesc;
+    }
+
+    public void setJsdesc(String jsdesc) {
+        this.jsdesc = jsdesc;
     }
 
     public String getTitle() {
@@ -169,6 +175,14 @@ public class GameinfoBean {
         this.allnum = allnum;
     }
 
+    public String getSourcesite() {
+        return sourcesite;
+    }
+
+    public void setSourcesite(String sourcesite) {
+        this.sourcesite = sourcesite;
+    }
+
     public int getQuerynameEnum() {
         return querynameEnum;
     }
@@ -183,6 +197,14 @@ public class GameinfoBean {
 
     public void setInvalid(int invalid) {
         this.invalid = invalid;
+    }
+
+    public long getJsid() {
+        return jsid;
+    }
+
+    public void setJsid(long jsid) {
+        this.jsid = jsid;
     }
 
     public int getNocopyright() {
@@ -311,6 +333,14 @@ public class GameinfoBean {
 
     public void setFinalrank(int finalrank) {
         this.finalrank = finalrank;
+    }
+
+    public String getJstype() {
+        return jstype;
+    }
+
+    public void setJstype(String jstype) {
+        this.jstype = jstype;
     }
 
     public String getInfotype() {

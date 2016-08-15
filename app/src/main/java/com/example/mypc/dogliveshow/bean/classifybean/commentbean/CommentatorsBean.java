@@ -1,4 +1,4 @@
-package com.example.mypc.dogliveshow.bean.classifybean.commentatorbean;
+package com.example.mypc.dogliveshow.bean.classifybean.commentbean;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -24,35 +24,38 @@ public class CommentatorsBean {
      * follows : 0
      * gamename_enum : 1001
      * channel_enum : 1
-     * rawcoverimage : http://i8.pdim.gs/45/008e4e5ff87790d201353c1a843692ab/w338/h190.jpg
+     * rawcoverimage : http://snap.quanmin.tv/2333-1471090269-654.jpg?imageView2/2/w/390/
      * off_enum : 0
-     * sourcename : 熊猫
-     * gameurl : http://www.panda.tv/cate/lol
-     * id : 4203699705804065995
-     * roomid : 7000
-     * sourcesite : www.panda.tv
-     * title : ll升降赛  OMG v YM
+     * sourcename : 全民
+     * gameurl : http://www.quanmin.tv/game/lol
+     * roomid : 2333
+     * id : 7722409199044057000
+     * jsdesc : 全民TV英雄联盟主播,人气最高解说
+     * title : 小智:今天又没睡醒!
      * allnum : 0
+     * sourcesite : www.quanmin.tv
      * queryname_enum : 1
      * invalid : 0
+     * jsid : 4487421976824670700
      * nocopyright : 0
      * name : 英雄联盟
-     * usehtml5 : 1
+     * usehtml5 : 0
      * fixrank : 0
-     * sogoupv : 136597
+     * sogoupv : 107973
      * gamecoverimage_width : 0
      * html5_allowpopup : 1
-     * commentator : LPL熊猫TV官方直播
-     * renqi : 245910
-     * viewers : 1978442
-     * html5_autoplay : 1
-     * url : http://www.panda.tv/7000
-     * rawcommentatorimage : http://i2.pdim.gs/t019df5aa44cbccb49b.jpg
+     * commentator : 小智
+     * renqi : 208208
+     * viewers : 2881225
+     * html5_autoplay : 0
+     * url : http://www.quanmin.tv/v/2333
+     * rawcommentatorimage : http://img03.sogoucdn.com/app/a/100520071/75d0c797420af70d7e259b45597026cb
      * gamecoverimage_height : 0
-     * html5_url : http://m.panda.tv/room.html?roomid=7000
+     * html5_url : http://m.quanmin.tv/v/2333
      * finalrank : 1
+     * jstype : 解说达人
      * infotype : live
-     * sourcename_enum : 6
+     * sourcename_enum : 7
      * channel : 游戏
      */
 

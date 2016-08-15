@@ -16,9 +16,9 @@ public class UrlConfig {
 
         public static final String HOMEPAGE_URL ="getAppIndexData";
         //栏目分类-->直播
-        public static final String CLASSIFY_COMMENTATOR_URL = "livesearch?";
+        public static final String CLASSIFY_COMMENTATOR_URL ="livesearch?";
         //栏目分类-->视频
-        public static final String CLASSIFY_VIDEO_URL = "searchgame?";
+        public static final String CLASSIFY_VIDEO_URL ="searchgame?";
     }
     //栏目分类
     public static class ClassifyKey{

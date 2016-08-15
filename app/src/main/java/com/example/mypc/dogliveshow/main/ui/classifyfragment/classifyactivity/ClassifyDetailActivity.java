@@ -2,6 +2,7 @@ package com.example.mypc.dogliveshow.main.ui.classifyfragment.classifyactivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.base.BaseActivity;
+import com.example.mypc.dogliveshow.bean.classifybean.commentbean.CommentatorsBean;
 
 import butterknife.BindView;
 
@@ -23,6 +25,8 @@ public class ClassifyDetailActivity extends BaseActivity {
     @BindView(R.id.vp_classify_detail)
     ViewPager mVpClassify;
     private int FLAG = 0;
+    private CommentatorsBean commentatorsbean;
+    private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,15 +66,11 @@ public class ClassifyDetailActivity extends BaseActivity {
             }
         });
     }
-
     @Override
     public int getLayoutID() {
         return R.layout.activity_classify_detail;
     }
-
-
-
-    //切换
+    //开关按钮之间切换
     private void changeBackground(int flag) {
         switch (flag){
             case 0:
@@ -86,14 +86,13 @@ public class ClassifyDetailActivity extends BaseActivity {
                 tvClassifyPlay.setTextColor(Color.parseColor("#FFFFFF"));
                 break;
         }
-
     }
-
+    //左侧箭头处理
     public void back(View view) {
         onBackPressed();
     }
 
-    //adapter
+    //viewpage的adapter
     class MyAdapter extends FragmentStatePagerAdapter{
 
         public MyAdapter(FragmentManager fm) {

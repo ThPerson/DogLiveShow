@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity"></activity>
+        <activity android:name=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity"/>
         <activity android:name=".main.ui.headlinefragment.HeadLineWeb"></activity>
     </application>
 
