@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mypc.dogliveshow.main.ui.mydog.AnchorTimeActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FE7053"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_anchor_time_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_back_gray"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="主播时刻"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/tv_anchor_time_editor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="编辑"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/ll_empty"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@mipmap/icon_no_data"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="点击录制主播们的奇葩瞬间,分分钟上头条"
+                android:textSize="25sp"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_anchor_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+</LinearLayout>

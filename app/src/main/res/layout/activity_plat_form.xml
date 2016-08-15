@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mypc.dogliveshow.main.ui.mydog.PlatFormActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FE7053"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_plat_form_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_back_gray"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="平台大全"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/lv_plat_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

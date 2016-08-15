@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.mypc.dogliveshow.main.ui.mydog.OffLineRedioActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FE7053"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/iv_offline_download_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_back_gray"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="离线下载"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/tv_offline_download_editor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="编辑"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout_offline"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        app:tabIndicatorColor="#FE7053"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#FE7053"
+        app:tabTextAppearance="@style/tabLayoutTextStyle"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_offline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_header_layout"/>
+
+</LinearLayout>

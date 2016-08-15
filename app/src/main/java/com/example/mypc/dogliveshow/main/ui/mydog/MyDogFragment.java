@@ -1,6 +1,7 @@
 package com.example.mypc.dogliveshow.main.ui.mydog;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -71,10 +72,10 @@ public class MyDogFragment extends Fragment {
                 Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.head_setting:
-                Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(),MoreSettingActivity.class));
                 break;
             case R.id.rl_anchor_time:
-                Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(),AnchorTimeActivity.class));
                 break;
             case R.id.rl_my_watch:
                 Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
@@ -83,16 +84,17 @@ public class MyDogFragment extends Fragment {
                 Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.rl_plat_form:
-                Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(),PlatFormActivity.class));
+
                 break;
             case R.id.rl_offline:
-                Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(),OffLineRedioActivity.class));
                 break;
             case R.id.rl_fav:
-                Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(),FavoriteActivity.class));
                 break;
             case R.id.rl_history:
-                Toast.makeText(getActivity(),"点击了...",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(),HistoryActivity.class));
                 break;
         }
     }

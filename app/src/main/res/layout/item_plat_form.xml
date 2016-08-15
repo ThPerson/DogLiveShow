@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/iv_plat_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/loading_icon_default_2"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/tv_displayname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="熊猫TV"/>
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="熊猫TV是最娱乐的直播平台，由国民老公王思聪创办"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_plat_download"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textColor="#FE7053"
+        android:textSize="20sp"
+        android:text="下载"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:background="@drawable/download_bg"/>
+</LinearLayout>
