@@ -27,9 +27,11 @@
         <activity android:name=".main.ui.mydog.PlatFormActivity" />
         <activity android:name=".main.ui.mydog.OffLineRedioActivity" />
         <activity android:name=".main.ui.mydog.FavoriteActivity" />
-        <activity android:name=".main.ui.mydog.HistoryActivity"></activity>
-        <activity android:name=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity"/>
-        <activity android:name=".main.ui.headlinefragment.HeadLineWeb"></activity>
+        <activity android:name=".main.ui.mydog.HistoryActivity" />
+        <activity android:name=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity" />
+        <activity android:name=".main.ui.headlinefragment.HeadLineWeb" />
+        <activity android:name=".main.ui.homepage.PlayVideoActivity"
+            android:screenOrientation="landscape" ></activity>
     </application>
 
 </manifest>

@@ -1,7 +1,5 @@
 package com.example.mypc.dogliveshow.utils.homepagereclive;
 
-import android.util.Log;
-
 import com.example.mypc.dogliveshow.bean.homepagetitle.HomePage;
 
 import org.json.JSONArray;
@@ -55,20 +53,24 @@ public class HomePageRecLiveConvertFactory extends Converter.Factory {
                         HomePage.RecLiveBean.DataListBean.MyArrayListBean.MapBean hcdmm = new
                                 HomePage.RecLiveBean.DataListBean.MyArrayListBean.MapBean();
                         String name = map.getString("name");
-//                        String roomid = map.optString("roomid","1");
+                        String roomid = map.optString("roomid","1");
                         String rawcommentatorimage = map.getString("rawcommentatorimage");
                         String commentator = map.getString("commentator");
                         String title = map.getString("title");
                         String viewers = map.getString("viewers");
                         String rawcoverimage = map.getString("rawcoverimage");
                         String sourcename = map.getString("sourcename");
+                        String html5_url = map.getString("html5_url");
+                        String sourcesite = map.getString("sourcesite");
+                        hcdmm.setSourcesite(sourcesite);
+                        hcdmm.setHtml5Url(html5_url);
                         hcdmm.setName(name);
                         hcdmm.setTitle(title);
                         hcdmm.setViewers(viewers);
                         hcdmm.setRawcoverimage(rawcoverimage);
                         hcdmm.setSourcename(sourcename);
                         hcdmm.setRawcommentatorimage(rawcommentatorimage);
-//                        hcdmm.setRoomid(roomid);
+                        hcdmm.setRoomid(roomid);
                         hcdmm.setCommentator(commentator);
                         hcdm.setMap(hcdmm);
                         xList.add(hcdm);

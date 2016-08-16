@@ -1,6 +1,7 @@
 package com.example.mypc.dogliveshow.main.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.bean.homepagetitle.HomePage;
 import com.example.mypc.dogliveshow.config.UrlConfig;
+import com.example.mypc.dogliveshow.main.ui.homepage.PlayVideoActivity;
 import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageHeadContract;
 import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageHeadModel;
 import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageHeadPresenter;
@@ -107,12 +109,7 @@ public class HomePageFragment extends Fragment implements HomePageHeadContract.V
         recyHomeHeadTitle.setLayoutManager(sgm);
         homePageTitleAdapter = new HomePageTitleAdapter(R.layout.home_page_head_item, xList);
         recyHomeHeadTitle.setAdapter(homePageTitleAdapter);
-        homePageTitleAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
-            @Override
-            public void onItemClick(View view, int i) {
-                Toast.makeText(getActivity(),"i+++++"+i,Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 
     private void getRecLiveRes() {
@@ -174,6 +171,23 @@ public class HomePageFragment extends Fragment implements HomePageHeadContract.V
                 }
                 xRecList.addAll(recList);
                 recLiveAdapter.notifyDataSetChanged();
+                recLiveAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int i) {
+                        String roomid = list.getRecLive().getDataList().get(0).getMyArrayList().get(i).getMap().getRoomid();
+                        String sourcesite = list.getRecLive().getDataList().get(0).getMyArrayList().get(i).getMap().getSourcesite();
+                        Intent intent = new Intent(getActivity(),PlayVideoActivity.class);
+                        intent.putExtra("roomid",roomid);
+                        intent.putExtra("sourcesite",sourcesite);
+                        if("www.quanmin.tv".equals(sourcesite)){
+                            startActivity(intent);
+                        }else if("www.kktv5.com".equals(sourcesite)){
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getActivity(),"i+++++"+i,Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
             }
         });
@@ -188,6 +202,23 @@ public class HomePageFragment extends Fragment implements HomePageHeadContract.V
                 }
                 xList.addAll(mList);
                 homePageTitleAdapter.notifyDataSetChanged();
+                homePageTitleAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int i) {
+                        String roomid = list.getConLive().getDataList().get(0).getMyArrayList().get(i).getMap().getRoomid();
+                        String sourcesite = list.getConLive().getDataList().get(0).getMyArrayList().get(i).getMap().getSourcesite();
+                        Intent intent = new Intent(getActivity(),PlayVideoActivity.class);
+                        intent.putExtra("roomid",roomid);
+                        intent.putExtra("sourcesite",sourcesite);
+                        if("www.quanmin.tv".equals(sourcesite)){
+                            startActivity(intent);
+                        }else if("www.kktv5.com".equals(sourcesite)){
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getActivity(),"i+++++"+i,Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
     }
@@ -200,6 +231,23 @@ public class HomePageFragment extends Fragment implements HomePageHeadContract.V
                 }
                 xHotList.addAll(hotList);
                 hotAdapter.notifyDataSetChanged();
+                hotAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int i) {
+                        String roomid = list.getHotLive().getDataList().get(0).getMyArrayList().get(i).getMap().getRoomid();
+                        String sourcesite = list.getHotLive().getDataList().get(0).getMyArrayList().get(i).getMap().getSourcesite();
+                        Intent intent = new Intent(getActivity(),PlayVideoActivity.class);
+                        intent.putExtra("roomid",roomid);
+                        intent.putExtra("sourcesite",sourcesite);
+                        if("www.quanmin.tv".equals(sourcesite)){
+                            startActivity(intent);
+                        }else if("www.kktv5.com".equals(sourcesite)){
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getActivity(),"i+++++"+i,Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
     }

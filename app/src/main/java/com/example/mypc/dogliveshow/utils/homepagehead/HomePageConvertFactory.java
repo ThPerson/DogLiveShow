@@ -53,12 +53,16 @@ public class HomePageConvertFactory extends Converter.Factory {
                         HomePage.ConLiveBean.DataListBean.MyArrayListBean.MapBean hcdmm = new
                                 HomePage.ConLiveBean.DataListBean.MyArrayListBean.MapBean();
                         String name = map.getString("name");
-//                        String roomid = map.optString("roomid","");
+                        String roomid = map.optString("roomid","");
                         String rawcommentatorimage = map.getString("rawcommentatorimage");
                         String commentator = map.getString("commentator");
+                        String html5_url = map.getString("html5_url");
+                        String sourcesite = map.getString("sourcesite");
+                        hcdmm.setSourcesite(sourcesite);
+                        hcdmm.setHtml5Url(html5_url);
                         hcdmm.setName(name);
                         hcdmm.setRawcommentatorimage(rawcommentatorimage);
-//                        hcdmm.setRoomid(roomid);
+                        hcdmm.setRoomid(roomid);
                         hcdmm.setCommentator(commentator);
                         hcdm.setMap(hcdmm);
                         xList.add(hcdm);
