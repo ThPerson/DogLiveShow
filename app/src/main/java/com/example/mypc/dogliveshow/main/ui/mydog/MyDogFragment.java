@@ -13,6 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mypc.dogliveshow.R;
+import com.example.mypc.dogliveshow.dao.User;
+import com.example.mypc.dogliveshow.dao.UserDao;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,6 +53,8 @@ public class MyDogFragment extends Fragment {
     RelativeLayout rlFav;
     @BindView(R.id.rl_history)
     RelativeLayout rlHistory;
+    private List<User> users;
+
 
     public MyDogFragment() {
     }
@@ -59,6 +65,12 @@ public class MyDogFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my_dog, container, false);
         ButterKnife.bind(this, view);
+        users = UserDao.quaryAll(getActivity());
+        if(users.size()>0){
+            tvFavMsgNo.setText(users.size()+"条收藏");
+        }else{
+            tvFavMsgNo.setText("暂无");
+        }
         return view;
     }
 
@@ -91,11 +103,29 @@ public class MyDogFragment extends Fragment {
                 startActivity(new Intent(getActivity(),OffLineRedioActivity.class));
                 break;
             case R.id.rl_fav:
-                startActivity(new Intent(getActivity(),FavoriteActivity.class));
+                User user = new User();
+                user.setName("jiafan");
+                user.setPwd("123");
+                user.setFavContent("测试测试");
+                user.setFavUrl("123213");
+                UserDao.add(user,getActivity());
+                Intent intent =new  Intent(getActivity(),FavoriteActivity.class);
+                startActivity(intent);
                 break;
             case R.id.rl_history:
                 startActivity(new Intent(getActivity(),HistoryActivity.class));
                 break;
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        users = UserDao.quaryAll(getActivity());
+        if(users.size()>0){
+            tvFavMsgNo.setText(users.size()+"条收藏");
+        }else{
+            tvFavMsgNo.setText("暂无");
         }
     }
 }

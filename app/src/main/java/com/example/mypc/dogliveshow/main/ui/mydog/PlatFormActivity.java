@@ -72,7 +72,7 @@ public class PlatFormActivity extends AppCompatActivity implements PlatFormConta
         adapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, int i) {
-                Toast.makeText(PlatFormActivity.this, "" + i, Toast.LENGTH_SHORT).show();
+                Toast.makeText(PlatFormActivity.this, "开始下载-->" + list.get(i).getName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(PlatFormActivity.this, DownloadService.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("url",list.get(i).getAndroiddownloadurl());
