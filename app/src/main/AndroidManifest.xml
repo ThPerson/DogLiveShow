@@ -30,6 +30,7 @@
         <activity android:name=".main.ui.mydog.HistoryActivity"></activity>
         <activity android:name=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity"/>
         <activity android:name=".main.ui.headlinefragment.HeadLineWeb"></activity>
+        <service android:name=".main.ui.mydog.platform.DownloadService"/>
     </application>
 
 </manifest>

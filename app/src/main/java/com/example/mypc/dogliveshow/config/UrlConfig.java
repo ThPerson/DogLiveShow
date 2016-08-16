@@ -19,6 +19,9 @@ public class UrlConfig {
         public static final String CLASSIFY_COMMENTATOR_URL ="livesearch?";
         //栏目分类-->视频
         public static final String CLASSIFY_VIDEO_URL ="searchgame?";
+        //平台大全
+        public static final String PLAT_FORM_URL ="mvc/app/platformconfig.jsp";
+
     }
     //栏目分类
     public static class ClassifyKey{
@@ -28,6 +31,16 @@ public class UrlConfig {
         public static final String APPVER = "appVer";
         public static final String TYPE = "type";
         public static final String PAGENO = "pageNo";
+    }
+    //平台大全
+    public static class PlatFormKey{
+        public static final String USER_ID="user_id";
+        public static final String OS="os";
+        public static final String USERKEY="userKey";
+        public static final String NAME="name";
+        public static final String SYSTEM="system";
+        public static final String VERSION="version";
+        public static final String APPID="appid";
     }
     //主播头条KEY
     public static class HeadLineKey{
