@@ -24,15 +24,15 @@
             android:text="我的收藏"
             android:textColor="#fff"
             android:textSize="18sp"/>
-        <TextView
-            android:id="@+id/tv_favorite_editor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:text="编辑"
-            android:textColor="#fff"
-            android:textSize="18sp"/>
+        <!--<TextView-->
+            <!--android:id="@+id/tv_favorite_editor"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:text="编辑"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textSize="18sp"/>-->
     </RelativeLayout>
     <FrameLayout
         android:layout_width="match_parent"
