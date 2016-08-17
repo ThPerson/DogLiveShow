@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
+import android.os.ResultReceiver;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -21,33 +21,42 @@ import java.net.URL;
  * QQ：1319662955
  */
 public class DownloadService extends IntentService{
-
+    public static final int UPDATE_PROGRESS = 8344;
     public DownloadService() {
-        super("");
+        super("DownloadService");
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Bundle bundle = intent.getExtras();
-        String path = bundle.getString("url");
-        String name = bundle.getString("name");
-        Log.i("TAG",path+name);
+
+        String path = intent.getStringExtra("url");
+        String name = path.substring(path.lastIndexOf("/"));
+        ResultReceiver receiver = (ResultReceiver)intent.getParcelableExtra("receiver");
         try {
             URL url = new URL(path);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             if (conn.getResponseCode() == 200) {
+                int fileLength = conn.getContentLength();
                 InputStream stream = conn.getInputStream();
                 String file = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + name;
                 BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(new File(file)));
                 int len = 0;
                 byte[] buffer = new byte[1024];
+                long total = 0;
                 while ((len = stream.read(buffer)) != -1) {
+                    total += len;
+                    Bundle resultData = new Bundle();
+                    resultData.putInt("progress" ,(int) (total * 100f / fileLength));
+                    receiver.send(UPDATE_PROGRESS, resultData);
                     bos.write(buffer, 0, len);
                     bos.flush();
                 }
 
-                //Service得告诉Activity,图片下载并保存成功,Activity可以展示图片了.
+                Bundle resultData = new Bundle();
+                resultData.putInt("progress" ,100);
+                receiver.send(UPDATE_PROGRESS, resultData);
+                //广播提示下载完成
                 sendBroadcast(new Intent("completed"));
 
             }
@@ -58,5 +67,6 @@ public class DownloadService extends IntentService{
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
