@@ -19,6 +19,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.mypc.dogliveshow.R;
 import com.example.mypc.dogliveshow.bean.homepagetitle.HomePage;
 import com.example.mypc.dogliveshow.config.UrlConfig;
+import com.example.mypc.dogliveshow.main.ui.activitymore.MoreGuanActivity;
 import com.example.mypc.dogliveshow.main.ui.homepage.PlayVideoActivity;
 import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageHeadContract;
 import com.example.mypc.dogliveshow.main.ui.homepage.homepagehead.HomePageHeadModel;
@@ -142,7 +143,7 @@ public class HomePageFragment extends Fragment implements HomePageHeadContract.V
                 Toast.makeText(getActivity(), "搜素", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tv_btn_more:
-                Toast.makeText(getActivity(), "更多", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), MoreGuanActivity.class));
                 break;
         }
     }

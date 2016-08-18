@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f5f5"
+    tools:context="com.example.mypc.dogliveshow.main.ui.activitymore.concern.ConcernFragment">
+
+    <com.example.mypc.dogliveshow.MyScrollview
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="#FE7053"
+                android:background="@color/cardview_light_background"
+                android:id="@+id/tv_my_concern"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="我关注的主播"
+                android:visibility="gone" />
+            <LinearLayout
+                android:background="@color/cardview_light_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/iv_empty_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:src="@mipmap/no_concern_bg" />
+                <ListView
+                    android:id="@+id/recycler_view_concern"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:background="@color/cardview_light_background"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+            <TextView
+                android:drawablePadding="10dp"
+                android:textColor="#FE7053"
+                android:drawableRight="@drawable/concern_line"
+                android:drawableLeft="@drawable/concern_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="推荐主播"/>
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:background="@color/cardview_light_background"
+                android:id="@+id/recy_tuijian_concern"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+    </com.example.mypc.dogliveshow.MyScrollview>
+</LinearLayout>

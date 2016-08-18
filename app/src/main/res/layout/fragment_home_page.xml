@@ -44,7 +44,6 @@
             android:layout_marginRight="10dp"
             android:src="@mipmap/search_icon" />
     </RelativeLayout>
-
     <com.example.mypc.dogliveshow.MyScrollview
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -151,7 +150,7 @@
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/recycler_hot_fire"></android.support.v7.widget.RecyclerView>
+                android:id="@+id/recycler_hot_fire"/>
         </LinearLayout>
     </com.example.mypc.dogliveshow.MyScrollview>
 </LinearLayout>

@@ -77,7 +77,7 @@ public class FavoriteActivity extends AppCompatActivity {
         });
     }
 
-    @OnClick({R.id.iv_favorite_back, R.id.tv_favorite_editor})
+    @OnClick({R.id.iv_favorite_back})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_favorite_back:

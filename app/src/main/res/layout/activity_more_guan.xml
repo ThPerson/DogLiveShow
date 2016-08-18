@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FE7053"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_btn_back"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:onClick="back"
+            android:scaleType="center"
+            android:src="@mipmap/back_icon" />
+
+        <RadioGroup
+            android:id="@+id/rg_btn_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_more_guan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/more_guan_zhu"
+                android:button="@null"
+                android:gravity="center"
+                android:text="我的关注"
+                android:checked="true"
+                android:textColor="@color/text_change"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_zhu_bo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/more_zhu_bo"
+                android:button="@null"
+                android:gravity="center"
+                android:text="主播排行"
+                android:textColor="@color/text_change"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_more_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

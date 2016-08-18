@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mypc.dogliveshow.main.ui.activitymore.anchordetail.AnchorDetailActivity">
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/btn_fab_float"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="10dp"-->
+    <!--android:src="@mipmap/ic_back"-->
+    <!--app:backgroundTint="#e0000000"-->
+    <!--app:borderWidth="0dp"-->
+    <!--app:elevation="5dp"-->
+    <!--app:fabSize="mini"-->
+    <!--app:layout_anchor="@+id/relative_layout_fab"-->
+    <!--app:layout_anchorGravity="left|top" />-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="244dp">
+
+        <com.example.mypc.dogliveshow.MyScrollview
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/relative_layout_fab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="244dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/commentator_personal_bg" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circ_view_head_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="40dp"
+                        android:src="@mipmap/sdfsd2"
+                        app:civ_border_color="@color/cardview_light_background"
+                        app:civ_border_width="2dp" />
+
+                    <LinearLayout
+                        android:id="@+id/lineat_layout_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/circ_view_head_image"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_anchor_detail_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/anchor_detail_guanhu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:background="@mipmap/icon_commentator_followed"
+                            android:textColor="@color/cardview_light_background" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lineat_layout_head"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_anchor_detail_game"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/cardview_light_background" />
+
+                        <ImageView
+
+                            android:layout_width="1dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="#e5e5e5" />
+
+                        <TextView
+                            android:id="@+id/tv_anchor_detail_pingtai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/cardview_light_background" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </com.example.mypc.dogliveshow.MyScrollview>
+
+        <ImageView
+            android:id="@+id/iv_on_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@mipmap/ic_back" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <ImageView
+            android:id="@+id/iv_glide_doutai"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+             />
+
+        <ImageView
+            android:id="@+id/btn_jump_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/commentator_play_btn" />
+
+        <TextView
+            android:id="@+id/tv_islive_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@mipmap/icon_yuan"
+            android:drawablePadding="10dp"
+            android:text="直播中"
+            android:textColor="@color/cardview_light_background" />
+
+        <TextView
+            android:id="@+id/tv_anchor_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="100dp"
+            android:text="枪战又如何"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_anchor_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_anchor_detail_title"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="龙珠"
+            android:textColor="@color/cardview_light_background" />
+
+        <TextView
+            android:id="@+id/tv_anchor_detail_viewer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_anchor_detail"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:text="万人"
+            android:textColor="@color/cardview_light_background" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ta的视频"
+                android:textColor="#e5e5e5"
+                android:textSize="12sp" />
+
+            <RadioGroup
+                android:layout_alignParentRight="true"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/btn_rb_hot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/btn_anchor_detail_selector"
+                    android:gravity="center"
+                    android:text="热度"
+                    android:textColor="@color/text_change_anchor"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/btn_rb_new"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/btn_anchor_detail_selector"
+                    android:gravity="center"
+                    android:text="最新"
+                    android:textColor="@color/text_change_anchor"
+                    android:textSize="12sp" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#e5e5e5"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relative_empty"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/commentator_offline_bg" />
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="80dp"
+                android:text="本主播暂时还没有视频..."
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/anchor_detail_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+</LinearLayout>

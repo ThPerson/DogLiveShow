@@ -13,6 +13,7 @@ public class UrlConfig {
         public static final String CLASSIFY_URL = "gamelivedata?";
         //主播头条URL
         public static final String HEAD_LINE_URL = "app/liveheadlines/get_user_article/";
+        public static final String ANCHOR_MORE_URL = "http://zhibo.sogou.com/";
 
         public static final String HOMEPAGE_URL = "getAppIndexData";
         //栏目分类-->直播
@@ -22,7 +23,6 @@ public class UrlConfig {
         //平台大全
         public static final String PLAT_FORM_URL ="mvc/app/platformconfig.jsp";
 
-        public static final String CLASSIFY_VIDEO_URL = "searchgame?";
         public static final String CLASSIFY_PLAY_VIDEO = "http://www.quanmin.tv/json/rooms/";
         public static final String STEAM_QUANMIN_PATH = "http://hls.quanmin.tv/live/44397/playlist.m3u8";
         public static final String STEAM_KK_PATH = "http://hpull.kktv8.com/livekktv/95202888/playlist.m3u8";
@@ -39,9 +39,15 @@ src: "http://hls.quanmin.tv/live/44397_L4/playlist.m3u8"
 name: "超清",
 src: "http://hls.quanmin.tv/live/44397/playlist.m3u8"
 },*/
-        //平台大全
-        public static final String PLAT_FORM_URL ="mvc/app/platformconfig.jsp";
-
+    }
+    public static class PlatFormKey{
+        public static final String USER_ID="user_id";
+        public static final String OS="os";
+        public static final String USERKEY="userKey";
+        public static final String NAME="name";
+        public static final String SYSTEM="system";
+        public static final String VERSION="version";
+        public static final String APPID="appid";
     }
     //栏目分类
     public static class ClassifyKey {
@@ -80,6 +86,10 @@ src: "http://hls.quanmin.tv/live/44397/playlist.m3u8"
         public static final String VERSION = "version";
         public static final String APPID = "appid";
     }
+    public static class AnchorMoreKey{
+        public static final String TYPE = "type";
+        public static final String APPID = "appid";
+    }
 
     public static class CommentatorKey {
         public static final String SYSVER = "sysVer";
@@ -87,7 +97,13 @@ src: "http://hls.quanmin.tv/live/44397/playlist.m3u8"
         public static final String APPVER = "appVer";
         public static final String RESULTTYPE = "resulttype";
         public static final String REQ_FROM = "req_from";
+    }
 
-
+    public static class AnchorDetailKey{
+        //http://zhibo.sogou.com/searchgame?product=video_search&resulttype=json&req_from=app&sp=jsid%3A%3Bliveid%3A11846132523836372988%3Bsorttype%3A1%3B
+        public static final String PRODUCT = "product";
+        public static final String RESULTTYPE = "resulttype";
+        public static final String REQ_FROM = "req_from";
+        public static final String SP = "sp";
     }
 }

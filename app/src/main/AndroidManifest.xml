@@ -13,7 +13,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".main.ui.MainActivity">
+        <activity
+            android:name=".main.ui.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,12 +32,21 @@
         <activity android:name=".main.ui.mydog.HistoryActivity" />
         <activity android:name=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity" />
         <activity android:name=".main.ui.headlinefragment.HeadLineWeb" />
-        <activity android:name=".main.ui.homepage.PlayVideoActivity"
-            android:screenOrientation="landscape" ></activity>
-        <activity android:name=".main.ui.mydog.HistoryActivity"></activity>
-        <activity android:name=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity"/>
-        <activity android:name=".main.ui.headlinefragment.HeadLineWeb"></activity>
-        <service android:name=".main.ui.mydog.platform.DownloadService"/>
+        <activity
+            android:name=".main.ui.homepage.PlayVideoActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".main.ui.mydog.HistoryActivity" />
+        <activity android:name=".main.ui.classifyfragment.classifyactivity.ClassifyDetailActivity" />
+        <activity android:name=".main.ui.headlinefragment.HeadLineWeb" />
+
+        <service android:name=".main.ui.mydog.platform.DownloadService" />
+
+        <activity
+            android:name=".main.ui.activitymore.MoreGuanActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".main.ui.activitymore.anchordetail.AnchorDetailActivity"
+            android:screenOrientation="portrait"
+            ></activity>
     </application>
 
 </manifest>

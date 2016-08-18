@@ -37,7 +37,6 @@ public class HomeHotHttpUtils {
             @Override
             public void onResponse(Call<HomePage> call, Response<HomePage> response) {
                 HomePage body = response.body();
-                Log.i("TAG", "onResponse: "+ body);
                 beanHttpCallback.onSucess(response.body());
             }
 

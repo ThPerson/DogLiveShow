@@ -36,8 +36,6 @@ public class HomeRecLiveHttpUtils {
         homePageTitleBeanCall.enqueue(new Callback<HomePage>() {
             @Override
             public void onResponse(Call<HomePage> call, Response<HomePage> response) {
-                HomePage body = response.body();
-                Log.i("TAG", "onResponse: "+ body);
                 beanHttpCallback.onSucess(response.body());
             }
 
