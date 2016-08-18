@@ -1,11 +1,13 @@
 package com.example.mypc.dogliveshow.main.ui.mydog;
 
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.ResultReceiver;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -32,6 +34,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+
+
 public class PlatFormActivity extends AppCompatActivity implements PlatFormContact.View {
 
     @BindView(R.id.iv_plat_form_back)
@@ -47,6 +51,7 @@ public class PlatFormActivity extends AppCompatActivity implements PlatFormConta
     private PlatFormAdapter adapter;
     private LinearLayoutManager manager;
     private MyReceiver receiver;
+    ProgressDialog mProgressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +66,7 @@ public class PlatFormActivity extends AppCompatActivity implements PlatFormConta
 
 
     private void initView() {
+        mProgressDialog = new ProgressDialog(this);
         list = new ArrayList<>();
         receiver = new MyReceiver();
         registerReceiver(receiver, new IntentFilter("completed"));
@@ -73,11 +79,20 @@ public class PlatFormActivity extends AppCompatActivity implements PlatFormConta
             @Override
             public void onItemClick(View view, int i) {
                 Toast.makeText(PlatFormActivity.this, "开始下载-->" + list.get(i).getName(), Toast.LENGTH_SHORT).show();
+                mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);// 设置水平进度条
+                mProgressDialog.setCancelable(true);// 设置是否可以通过点击Back键取消
+                mProgressDialog.setCanceledOnTouchOutside(false);// 设置在点击Dialog外是否取消Dialog进度条
+                mProgressDialog.setIcon(R.mipmap.ic_launcher);// 设置提示的title的图标，默认是没有的
+                mProgressDialog.setTitle("提示");
+                mProgressDialog.setMax(100);
+                mProgressDialog.show();
                 Intent intent = new Intent(PlatFormActivity.this, DownloadService.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("url",list.get(i).getAndroiddownloadurl());
-                bundle.putString("name",list.get(i).getAndroidPackageName());
-                intent.putExtras(bundle);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("url",list.get(i).getAndroiddownloadurl());
+//                bundle.putString("name",list.get(i).getAndroidPackageName());
+                intent.putExtra("url",list.get(i).getAndroiddownloadurl());
+
+                intent.putExtra("receiver", new DownloadReceiver(new Handler()));
                 startService(intent);
             }
         });
@@ -128,6 +143,22 @@ public class PlatFormActivity extends AppCompatActivity implements PlatFormConta
                 builder.setMessage("安装包已经下载完成!");
                 builder.setPositiveButton("OK",null);
                 builder.show();
+            }
+        }
+    }
+    private class DownloadReceiver extends ResultReceiver {
+        public DownloadReceiver(Handler handler) {
+            super(handler);
+        }
+        @Override
+        protected void onReceiveResult(int resultCode, Bundle resultData) {
+            super.onReceiveResult(resultCode, resultData);
+            if (resultCode == DownloadService.UPDATE_PROGRESS) {
+                int progress = resultData.getInt("progress");
+                mProgressDialog.setProgress(progress);
+                if (progress == 100) {
+                    mProgressDialog.dismiss();
+                }
             }
         }
     }
